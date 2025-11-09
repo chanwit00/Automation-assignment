@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-11-09T18:30:51.871647" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\automation\web\login_test.robot">
+<kw name="Open Application and Login To CCB" owner="login_keywords" type="SETUP">
+<kw name="Load Config" owner="login_keywords">
+<kw name="Load Yaml" owner="yaml_loader">
+<msg time="2025-11-09T18:30:52.020788" level="INFO">${DATA} = {'environment': 'dev', 'url': 'https://ccbdev.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'kamkamm', 'password': '446825zaZ.'}, 'timeouts': {'element_wai...</msg>
+<var>${DATA}</var>
+<arg>${EXECDIR}/config/settings.yaml</arg>
+<status status="PASS" start="2025-11-09T18:30:52.019701" elapsed="0.001123"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-11-09T18:30:52.021147" level="INFO">${CONFIG} = {'environment': 'dev', 'url': 'https://ccbdev.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'kamkamm', 'password': '446825zaZ.'}, 'timeouts': {'element_wai...</msg>
+<arg>${CONFIG}</arg>
+<arg>${DATA}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-11-09T18:30:52.020940" elapsed="0.000244"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>&gt;&gt;&gt; CONFIG LOADED</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-09T18:30:52.021270" elapsed="0.000211"/>
+</kw>
+<status status="PASS" start="2025-11-09T18:30:52.019274" elapsed="0.002261"/>
+</kw>
+<kw name="New Browser" owner="Browser">
+<msg time="2025-11-09T18:30:52.022105" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\46bdf53a-c11b-4aab-8435-7cda68e7e815"}</msg>
+<msg time="2025-11-09T18:30:52.034948" level="INFO">Starting Browser process C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:57729</msg>
+<msg time="2025-11-09T18:30:52.692036" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\46bdf53a-c11b-4aab-8435-7cda68e7e815"}</msg>
+<arg>${CONFIG}[browser]</arg>
+<arg>headless=${CONFIG}[headless]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-11-09T18:30:52.021608" elapsed="0.670584"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-11-09T18:30:53.295967" level="INFO">Successfully initialized new page object and opened url: https://ccbdev.tau2904.com/auth/login</msg>
+<msg time="2025-11-09T18:30:53.296034" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2025-11-09T18:30:53.296186" level="INFO">${PAGE} = {'page_id': 'page=e266743f-7b20-4048-b986-d6f94dcb5b13', 'video_path': ''}</msg>
+<var>${PAGE}</var>
+<arg>${CONFIG}[url]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-11-09T18:30:52.692359" elapsed="0.603850"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-11-09T18:30:53.296654" level="INFO">${PAGE} = {'page_id': 'page=e266743f-7b20-4048-b986-d6f94dcb5b13', 'video_path': ''}</msg>
+<arg>${PAGE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-11-09T18:30:53.296356" elapsed="0.000335"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:30:53.317581" level="INFO">Waited for Element with selector //input[@type='text'] at state visible</msg>
+<arg>//input[@type='text']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:30:53.296794" elapsed="0.020918"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-09T18:30:53.318344" level="INFO">Fills the text 'kamkamm' in the given field.</msg>
+<arg>//input[@type='text']</arg>
+<arg>${CONFIG}[CCBUSER][username]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:30:53.317867" elapsed="0.014147"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-09T18:30:53.332648" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
+<arg>//button[normalize-space()='Next']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:30:53.332180" elapsed="1.364719"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-09T18:30:54.697744" level="INFO">Fills the text '446825zaZ.' in the given field.</msg>
+<arg>//input[@type='password']</arg>
+<arg>${CONFIG}[CCBUSER][password]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:30:54.697119" elapsed="0.193407"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-09T18:30:54.891203" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
+<arg>//button[normalize-space()='Next']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:30:54.890742" elapsed="0.028530"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:30:57.873818" level="INFO">Waited for Element with selector //ca-dashboard-widget[@id='DashboardFinancialSummaryComponent'] at state visible</msg>
+<arg>//ca-dashboard-widget[@id='DashboardFinancialSummaryComponent']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:30:54.919440" elapsed="2.954517"/>
+</kw>
+<status status="PASS" start="2025-11-09T18:30:52.018990" elapsed="5.855082"/>
+</kw>
+<test id="s1-t1" name="TS001_TC007: Create new file : Upload file TBank format - CMS001" line="7">
+<kw name="Go To Create Payment Import File From Payment" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-11-09T18:30:57.879452" level="INFO">Clicks the element '//span[normalize-space()='Payment']'.</msg>
+<arg>//span[normalize-space()='Payment']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:30:57.879073" elapsed="0.870001"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:30:58.754633" level="INFO">Waited for Element with selector //span[normalize-space()='Create payment Import file'] at state visible</msg>
+<arg>//span[normalize-space()='Create payment Import file']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:30:58.749304" elapsed="0.005449"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-09T18:30:58.755350" level="INFO">Clicks the element '//span[normalize-space()='Create payment Import file']'.</msg>
+<arg>//span[normalize-space()='Create payment Import file']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:30:58.754900" elapsed="0.047008"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.182335" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')]</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:30:58.802076" elapsed="1.380433"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.188236" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.182734" elapsed="0.005602"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.192435" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.188470" elapsed="0.004060"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.198975" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Convert file'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Convert file']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.192664" elapsed="0.006440"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.203508" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Recipient lists'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Recipient lists']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.199260" elapsed="0.004343"/>
+</kw>
+<status status="PASS" start="2025-11-09T18:30:57.878660" elapsed="2.325018"/>
+</kw>
+<kw name="Click create new file button" owner="login_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-11-09T18:31:00.204607" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.204265" elapsed="0.057135"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicked create new file button</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.261560" elapsed="0.000404"/>
+</kw>
+<status status="PASS" start="2025-11-09T18:31:00.203933" elapsed="0.058115"/>
+</kw>
+<kw name="Verify detail in modal default Upload file to edit transaction when click create new file" owner="login_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.266982" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Select type'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Select type']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.262542" elapsed="0.004549"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.272971" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Create new file'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Create new file']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.267234" elapsed="0.005869"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.278465" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.273253" elapsed="0.005333"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-09T18:31:00.294096" level="INFO">Text: 'Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format'</msg>
+<msg time="2025-11-09T18:31:00.294216" level="INFO">${msg} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
+<var>${msg}</var>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'Support only ttb format')]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.278728" elapsed="0.015510"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-09T18:31:00.294675" level="INFO">${expected} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
+<var>${expected}</var>
+<arg>${CONFIG}[Expected_messages][Upload_file_to_edit_transaction_detail]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.294372" elapsed="0.000325"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.294791" elapsed="0.000180"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>&gt;&gt;&gt; Upload file to edit transaction detail (Matched: ${expected})</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.295050" elapsed="0.000304"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-09T18:31:00.295829" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.295466" elapsed="0.027776"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-09T18:31:00.323872" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.323403" elapsed="0.033639"/>
+</kw>
+<status status="PASS" start="2025-11-09T18:31:00.262240" elapsed="0.094906"/>
+</kw>
+<kw name="Verify Upload payment file page should be display correctly" owner="login_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.396421" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload payment file'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload payment file']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.357752" elapsed="0.038800"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-09T18:31:00.404959" level="INFO">Text: 'You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The system supports uploading ttb format (SAPFORMAT and SAPFORMAT NEW) and TBank format (CMS001, CMS002, CMS005, CMS030, MCS001 and MCS003)'</msg>
+<msg time="2025-11-09T18:31:00.405071" level="INFO">${msg} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
+<var>${msg}</var>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'You can edit detail in existing file')]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.396705" elapsed="0.008388"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-09T18:31:00.405519" level="INFO">${expected} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
+<var>${expected}</var>
+<arg>${CONFIG}[Expected_messages][Upload_payment_file_detail]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.405227" elapsed="0.000317"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.405639" elapsed="0.000194"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>&gt;&gt;&gt; Upload payment file detail (Matched: ${expected})</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.405912" elapsed="0.000358"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.410916" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@data-testid='dropbox-testid'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@data-testid='dropbox-testid']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.406384" elapsed="0.004646"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:00.418152" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state disabled</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
+<arg>disabled</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.411168" elapsed="0.007096"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-11-09T18:31:00.468915" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.418408" elapsed="0.050624"/>
+</kw>
+<status status="PASS" start="2025-11-09T18:31:00.357391" elapsed="0.111719"/>
+</kw>
+<kw name="Upload File To Drop Zone" owner="login_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-09T18:31:00.469963" level="INFO">${file_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\keywords\..\..\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt</msg>
+<var>${file_path}</var>
+<arg>C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\resources\\keywords${/}..${/}..${/}resources${/}testdata${/}common${/}Web_Converter${/}${filename}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.469688" elapsed="0.000299"/>
+</kw>
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2025-11-09T18:31:00.470298" level="INFO" html="true">File '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt&lt;/a&gt;' exists.</msg>
+<arg>${file_path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.470070" elapsed="0.000272"/>
+</kw>
+<kw name="Upload File By Selector" owner="Browser">
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //input[@type='file']</arg>
+<arg>${file_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Uploads file from ``path`` to file input element matched by selector.</doc>
+<status status="PASS" start="2025-11-09T18:31:00.470432" elapsed="0.014002"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-09T18:31:30.562223" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-09T18:31:30.562360" level="INFO">See also file:///C:/Users/Grxxn/Desktop/All%20File%20Automate/Automation-assignment/reports/playwright-log.txt for additional details.</msg>
+<msg time="2025-11-09T18:31:30.562640" level="FAIL">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
+Call log:
+  - attempting wait for enabled action
+    2 × element is not enabled
+    - retrying wait for enabled action
+    - waiting 20ms
+    2 × element is not enabled
+    - retrying wait for enabled action
+      - waiting 100ms
+    59 × element is not enabled
+     - retrying wait for enabled action
+       - waiting 500ms
+</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
+<arg>enabled</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="FAIL" start="2025-11-09T18:31:00.484802" elapsed="30.080729">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
+Call log:
+  - attempting wait for enabled action
+    2 × element is not enabled
+    - retrying wait for enabled action
+    - waiting 20ms
+    2 × element is not enabled
+    - retrying wait for enabled action
+      - waiting 100ms
+    59 × element is not enabled
+     - retrying wait for enabled action
+       - waiting 500ms
+</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>File uploaded: ${filename}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-11-09T18:31:30.565694" elapsed="0.000129"/>
+</kw>
+<arg>CONVERT_CMS001.txt</arg>
+<status status="FAIL" start="2025-11-09T18:31:00.469366" elapsed="30.096572">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
+Call log:
+  - attempting wait for enabled action
+    2 × element is not enabled
+    - retrying wait for enabled action
+    - waiting 20ms
+    2 × element is not enabled
+    - retrying wait for enabled action
+      - waiting 100ms
+    59 × element is not enabled
+     - retrying wait for enabled action
+       - waiting 500ms
+</status>
+</kw>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-11-09T18:31:30.680950" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-09T18:31:30.566322" elapsed="0.114753"/>
+</kw>
+<doc>Create new file : Upload file TBank format
+- CMS001</doc>
+<tag>happy_case</tag>
+<tag>lab1_happy_case</tag>
+<status status="FAIL" start="2025-11-09T18:30:57.874149" elapsed="32.807112">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
+Call log:
+  - attempting wait for enabled action
+    2 × element is not enabled
+    - retrying wait for enabled action
+    - waiting 20ms
+    2 × element is not enabled
+    - retrying wait for enabled action
+      - waiting 100ms
+    59 × element is not enabled
+     - retrying wait for enabled action
+       - waiting 500ms
+</status>
+</test>
+<status status="FAIL" start="2025-11-09T18:30:51.872596" elapsed="38.812008"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">happy_case</stat>
+<stat pass="0" fail="1" skip="0">lab1_happy_case</stat>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="0" fail="1" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

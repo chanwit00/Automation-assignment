@@ -1,0 +1,157 @@
+{"level":30,"time":"2025-11-09T11:30:52.524Z","pid":28156,"hostname":"Grxxn","msg":"Listening on 127.0.0.1:57729"}
+{"level":30,"time":"2025-11-09T11:30:52.559Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-11-09T11:30:52.690Z","pid":28156,"hostname":"Grxxn","msg":"Adding browser to stack: chromium, version: 141.0.7390.37"}
+{"level":30,"time":"2025-11-09T11:30:52.690Z","pid":28156,"hostname":"Grxxn","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-11-09T11:30:52.690Z","pid":28156,"hostname":"Grxxn","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-11-09T11:30:52.694Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-11-09T11:30:52.694Z","pid":28156,"hostname":"Grxxn","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@2ef11e3fd45715cc9b07dbd136cde007\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=8381ba4c-4eda-4169-8e02-8f1a461fffaf\"}"}
+{"level":30,"time":"2025-11-09T11:30:52.703Z","pid":28156,"hostname":"Grxxn","msg":"Setting default timeout for context context=707a3b2c-884c-48a2-8d81-9edc9b34b5dd to 10000"}
+{"level":30,"time":"2025-11-09T11:30:52.703Z","pid":28156,"hostname":"Grxxn","msg":"Changed active context: context=707a3b2c-884c-48a2-8d81-9edc9b34b5dd"}
+{"level":30,"time":"2025-11-09T11:30:52.835Z","pid":28156,"hostname":"Grxxn","msg":"Video path: undefined"}
+{"level":30,"time":"2025-11-09T11:30:52.835Z","pid":28156,"hostname":"Grxxn","msg":"Changed active page"}
+{"level":30,"time":"2025-11-09T11:30:53.294Z","pid":28156,"hostname":"Grxxn","msg":"End of node method newPage"}
+{"level":30,"time":"2025-11-09T11:30:53.298Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:30:53.298Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //input[@type='text'] in page."}
+{"level":30,"time":"2025-11-09T11:30:53.316Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:30:53.319Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-09T11:30:53.319Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //input[@type='text'] in page."}
+{"level":30,"time":"2025-11-09T11:30:53.330Z","pid":28156,"hostname":"Grxxn","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-09T11:30:53.333Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-09T11:30:53.333Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //button[normalize-space()='Next'] in page."}
+{"level":30,"time":"2025-11-09T11:30:54.695Z","pid":28156,"hostname":"Grxxn","msg":"End of node method click"}
+{"level":30,"time":"2025-11-09T11:30:54.698Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-09T11:30:54.698Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //input[@type='password'] in page."}
+{"level":30,"time":"2025-11-09T11:30:54.889Z","pid":28156,"hostname":"Grxxn","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-09T11:30:54.891Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-09T11:30:54.891Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //button[normalize-space()='Next'] in page."}
+{"level":30,"time":"2025-11-09T11:30:54.918Z","pid":28156,"hostname":"Grxxn","msg":"End of node method click"}
+{"level":30,"time":"2025-11-09T11:30:54.920Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:30:54.920Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //ca-dashboard-widget[@id='DashboardFinancialSummaryComponent'] in page."}
+{"level":30,"time":"2025-11-09T11:30:57.872Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:30:57.876Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-09T11:30:57.877Z","pid":28156,"hostname":"Grxxn","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-09T11:30:57.879Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-09T11:30:57.879Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //span[normalize-space()='Payment'] in page."}
+{"level":30,"time":"2025-11-09T11:30:58.747Z","pid":28156,"hostname":"Grxxn","msg":"End of node method click"}
+{"level":30,"time":"2025-11-09T11:30:58.750Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:30:58.750Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //span[normalize-space()='Create payment Import file'] in page."}
+{"level":30,"time":"2025-11-09T11:30:58.753Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:30:58.756Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-09T11:30:58.756Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //span[normalize-space()='Create payment Import file'] in page."}
+{"level":30,"time":"2025-11-09T11:30:58.800Z","pid":28156,"hostname":"Grxxn","msg":"End of node method click"}
+{"level":30,"time":"2025-11-09T11:30:58.802Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:30:58.803Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[contains(text(),'For Thanachart iBiz customer')] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.181Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.184Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.184Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.187Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.189Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.189Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //button[normalize-space()='Create new file'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.191Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.193Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.193Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //button[normalize-space()='Convert file'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.198Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.200Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.200Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //button[normalize-space()='Recipient lists'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.202Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.205Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-09T11:31:00.205Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //button[normalize-space()='Create new file'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.260Z","pid":28156,"hostname":"Grxxn","msg":"End of node method click"}
+{"level":30,"time":"2025-11-09T11:31:00.263Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.263Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[normalize-space()='Select type'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.266Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.268Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.268Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[normalize-space()='Create new file'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.271Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.274Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.274Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[normalize-space()='Upload file to edit transaction'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.277Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.279Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method getText"}
+{"level":30,"time":"2025-11-09T11:31:00.279Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[contains(text(),'Support only ttb format')] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.293Z","pid":28156,"hostname":"Grxxn","msg":"Retrieved text for element //iframe[@src='/bizone/converter'] >>> //p[contains(text(),'Support only ttb format')] containing Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format"}
+{"level":30,"time":"2025-11-09T11:31:00.293Z","pid":28156,"hostname":"Grxxn","msg":"End of node method getText"}
+{"level":30,"time":"2025-11-09T11:31:00.296Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-09T11:31:00.296Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[normalize-space()='Upload file to edit transaction'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.322Z","pid":28156,"hostname":"Grxxn","msg":"End of node method click"}
+{"level":30,"time":"2025-11-09T11:31:00.324Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-09T11:31:00.324Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //button[normalize-space()='Confirm'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.356Z","pid":28156,"hostname":"Grxxn","msg":"End of node method click"}
+{"level":30,"time":"2025-11-09T11:31:00.358Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.358Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[normalize-space()='Upload payment file'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.395Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.397Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method getText"}
+{"level":30,"time":"2025-11-09T11:31:00.397Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //p[contains(text(),'You can edit detail in existing file')] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.404Z","pid":28156,"hostname":"Grxxn","msg":"Retrieved text for element //iframe[@src='/bizone/converter'] >>> //p[contains(text(),'You can edit detail in existing file')] containing You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button \"Browse new\" to select a file or drag and drop file at \"Drop file to upload\" area. The system supports uploading ttb format (SAPFORMAT and SAPFORMAT NEW) and TBank format (CMS001, CMS002, CMS005, CMS030, MCS001 and MCS003)"}
+{"level":30,"time":"2025-11-09T11:31:00.404Z","pid":28156,"hostname":"Grxxn","msg":"End of node method getText"}
+{"level":30,"time":"2025-11-09T11:31:00.407Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.407Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //div[@data-testid='dropbox-testid'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.410Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.412Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.412Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //button[normalize-space()='Next'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.417Z","pid":28156,"hostname":"Grxxn","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.420Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-11-09T11:31:00.420Z","pid":28156,"hostname":"Grxxn","Take screenshot with options: ":{"path":"C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\screenshot\\robotframework-browser-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-11-09T11:31:00.467Z","pid":28156,"hostname":"Grxxn","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-11-09T11:31:00.472Z","pid":28156,"hostname":"Grxxn","msg":"Reading multiplepart uploadFileBySelector"}
+{"level":30,"time":"2025-11-09T11:31:00.472Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //input[@type='file'] in page."}
+{"level":30,"time":"2025-11-09T11:31:00.472Z","pid":28156,"hostname":"Grxxn","msg":"Uploading file(s) C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\resources\\testdata\\common\\web_Converter\\CONVERT_CMS001.txt to //iframe[@src='/bizone/converter'] >>> //input[@type='file']"}
+{"level":30,"time":"2025-11-09T11:31:00.485Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-11-09T11:31:00.486Z","pid":28156,"hostname":"Grxxn","msg":"Strict mode is enabled, find Locator with //iframe[@src='/bizone/converter'] >> internal:control=enter-frame >> //button[normalize-space()='Next'] in page."}
+{"level":30,"time":"2025-11-09T11:31:30.513Z","pid":28156,"hostname":"Grxxn","msg":"Error of node method  waitForElementState"}
+================= Original suppressed error =================
+elementHandle.waitForElementState: Timeout 30000ms exceeded.
+Call log:
+[2m  - attempting wait for enabled action[22m
+[2m    2 × element is not enabled[22m
+[2m    - retrying wait for enabled action[22m
+[2m    - waiting 20ms[22m
+[2m    2 × element is not enabled[22m
+[2m    - retrying wait for enabled action[22m
+[2m      - waiting 100ms[22m
+[2m    59 × element is not enabled[22m
+[2m     - retrying wait for enabled action[22m
+[2m       - waiting 500ms[22m
+
+    at waitForElementState (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:11724:20)
+    at async PlaywrightServer.waitForElementsState (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:13635:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2025-11-09T11:31:30.517Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-11-09T11:31:30.517Z","pid":28156,"hostname":"Grxxn","Take screenshot with options: ":{"path":"C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-11-09T11:31:30.561Z","pid":28156,"hostname":"Grxxn","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-11-09T11:31:30.567Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-11-09T11:31:30.575Z","pid":28156,"hostname":"Grxxn","msg":"Removed page=0c1710e2-8ba4-43c3-8c4b-66ab6826fdce from context=707a3b2c-884c-48a2-8d81-9edc9b34b5dd page stack"}
+{"level":30,"time":"2025-11-09T11:31:30.680Z","pid":28156,"hostname":"Grxxn","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-11-09T11:31:30.683Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-09T11:31:30.683Z","pid":28156,"hostname":"Grxxn","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:536:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-11-09T11:31:30.686Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-09T11:31:30.686Z","pid":28156,"hostname":"Grxxn","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-09T11:31:30.714Z","pid":28156,"hostname":"Grxxn","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-11-09T11:31:30.714Z","pid":28156,"hostname":"Grxxn","msg":"End of node method closeAllBrowsers"}
