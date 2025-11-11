@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head><base href="/auth/en/">
+		<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="author" content="Comarch">
+	<meta name="viewport" content="minimum-scale=1.0, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="google" content="notranslate">
+
+	<!-- web app in fullscreen mode on iPad and Android Chrome -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="#00549B">
+
+	<link rel="shortcut icon" type="image/png" href="/auth/img/favicon/favicon-16x16.tmb.png" sizes="16x16">
+	<link rel="shortcut icon" type="image/png" href="/auth/img/favicon/favicon-32x32.tmb.png" sizes="32x32">
+	<link rel="shortcut icon" type="image/png" href="/auth/img/favicon/favicon-96x96.tmb.png" sizes="96x96">
+
+	<link rel="apple-touch-icon" href="/auth/img/favicon/favicon-120x120.tmb.png">
+	<link rel="apple-touch-icon" href="/auth/img/favicon/favicon-180x180.tmb.png" sizes="180x180">
+	<link rel="apple-touch-icon" href="/auth/img/favicon/favicon-152x152.tmb.png" sizes="152x152">
+	<link rel="apple-touch-icon" href="/auth/img/favicon/favicon-167x167.tmb.png" sizes="167x167">
+
+	<script nonce="ce54b1141ec9bb45959617c051aa3d25">
+	window.dataLayer = window.dataLayer || [];
+
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-NBNQX4T');
+</script>
+
+<link rel="stylesheet" href="styles.88c0e4791d179b6d.css"></head>
+<body class="notranslate">
+
+	<ca-app ngcspnonce="ce54b1141ec9bb45959617c051aa3d25" class="main-view full-height flex-container"></ca-app>
+	<div class="ca-splash">
+	<div class="ca-whirlpool"></div>
+</div>
+<div class="header-spinner" id="header-tmb-spinner">
+	<div class="tmb-spinner">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+	</div>
+</div>
+
+
+	<script nonce="ce54b1141ec9bb45959617c051aa3d25">window.$config = {
+	langs: ["en","th"],
+	basePath: '/auth',
+	defaultLang: 'en',
+	langCookieName: '',
+	apiContext: '/api',
+	currentTime: '2025-11-12T03:37:10',
+    pingTimeout: 300,
+    idleTimeout: 720,
+	originBasePath: (document.currentScript.src && new URL(document.currentScript.src).origin) + '/auth',
+	enableAnalytics: 'GTM-NBNQX4T' !== '',
+	xsrfCookieName: '__Host-XSRF-TOKEN',
+	traceIdHeaderName: '',
+	transactionIdHeaderName: '',
+	devLocalMainUrl: '',
+	hideBrandingElements: false,
+	customPageTitle: 'Comarch',
+	faviconTheme: !!false ? 'default' : 'undefined',
+};
+</script>
+
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBNQX4T"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<script src="runtime.c532b012c9f09afc.js" type="module" nonce="ce54b1141ec9bb45959617c051aa3d25"></script><script src="polyfills.2f77a921b95c3343.js" type="module" nonce="ce54b1141ec9bb45959617c051aa3d25"></script><script src="scripts.3ba0d888147f647a.js" defer="" nonce="ce54b1141ec9bb45959617c051aa3d25"></script><script src="main.8e3400295f2beb26.js" type="module" nonce="ce54b1141ec9bb45959617c051aa3d25"></script></body>
+</html>

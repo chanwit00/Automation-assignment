@@ -12,7 +12,12 @@ Open Application and Login To CCB
     Load Config
     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
     Create Directory    ${download_dir}
+
+    # ✅ เปิด browser + context ให้รองรับการดาวน์โหลดไฟล์
     New Browser    ${CONFIG}[browser]    headless=${CONFIG}[headless]
+    ${context_args}=    Create Dictionary    acceptDownloads=${True}
+    New Context    &{context_args}
+
     ${PAGE}=    New Page    ${CONFIG}[url]
     Set Suite Variable    ${PAGE}
     Wait For Elements State    //input[@type='text']    visible    ${CONFIG}[timeouts][element_wait]
@@ -131,45 +136,32 @@ Verify File summary should be display correctly with file details:
     Log To Console    ✅ File summary verified successfully
 
 
-Click Generate File Button And Wait For Download
+Click Generate File Button And Wait For Download Validate Downloaded File Name and should be download successful
+    ${expected_date}=    Get Current Date    result_format=%d%m%y
+    ${current_time}=     Get Current Date    result_format=%H%M%S
+    ${download_dir}=     Set Variable    ${EXECDIR}${/}downloads
+    Create Directory     ${download_dir}
+
+    ${filename}=    Set Variable    DDS_${expected_date}_${current_time}_27.txt
+    ${target_path}=  Set Variable    ${download_dir}${/}${filename}
+
     Click    ${iframe} >>> //footer/button[normalize-space()='Generate file']
     Log To Console    ✅ Clicked Generate file button
-    Sleep    2s    # Wait for download to start
+    Log To Console    🚀 Start generating and downloading: ${filename}
 
+    ${downloaded}=    Download
+    ...    url=${CONFIG}[url]/main/extensions/WEB_CONVERTER
+    ...    saveAs=${target_path}
+    ...    wait_for_finished=True
+    ...    download_timeout=30s
 
+    File Should Exist    ${target_path}
+    Log To Console    ✅ File downloaded successfully: ${target_path}
 
+    RETURN    ${target_path}
 
-# Validate Downloaded File Name and should be download successful
-#     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
-#     ${expected_date}=    Get Current Date    result_format=%d%m%y
-    
-    
-#     # Check Windows Downloads folder
-#     ${downloads_folder}=    Evaluate    os.path.join(os.path.expanduser('~'), 'Downloads')    modules=os
-    
-#     # Wait for file to appear (max 30 seconds)
-#     ${pattern}=    Set Variable    DDS_${expected_date}_*_27.txt
-    
-#     Wait Until Keyword Succeeds    30s    1s
-#     ...    File Should Exist In Folder    ${downloads_folder}    ${pattern}
-    
-#     # Get the downloaded file
-#     @{files}=    List Files In Directory    ${downloads_folder}    ${pattern}    absolute=True
-#     ${downloaded_file}=    Get Latest File By Modified Time    ${downloads_folder}    ${pattern}
-    
-#     ${filename}=    Evaluate    os.path.basename(r'${downloaded_file}')    modules=os
-#     Log To Console    Filename: ${filename}
-    
-#     # Verify pattern
-#     Should Match Regexp    ${filename}    ^DDS_\\d{6}_\\d{6}_27\\.txt$
-#     Should Contain    ${filename}    ${expected_date}
-    
-#     # Copy to project downloads folder
-#     Create Directory    ${download_dir}
-#     ${target_path}=    Set Variable    ${download_dir}${/}${filename}
-#     Copy File    ${downloaded_file}    ${target_path}
-    
-#     Log To Console    ✅ Filename pattern verified and file saved: ${target_path}
-    
-#     RETURN    ${target_path}
-
+Verify generate file toast message should be display correctly with '27' records
+    Wait For Elements State    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    visible    ${CONFIG}[timeouts][element_wait]
+    ${tost}=    Get Text    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    should be    ${CONFIG}[Expected_messages][Generate_file_success]
+    Log To Console    ✅ Generate file success toast message verified: ${tost}
+    Take Screenshot

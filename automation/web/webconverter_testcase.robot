@@ -35,9 +35,8 @@ TS001_TC007: Create new file : Upload file TBank format - CMS001
     Set To Dictionary    ${file_data.TS001_TC007}    Effective_Date=${current_date}
     Verify File summary should be display correctly with file details:  ${file_data.TS001_TC007}
     # Click button with locator: '//footer/button[text()="Generate file"]' with: filename: DDS_${current_date_abbreviated_year}_${current_time}_27.txt should be download successful
-    Click Generate File Button And Wait For Download
-    # Validate Downloaded File Name and should be download successful
-    # Verify generate file toast message should be display correctly with '27' records  
+    Click Generate File Button And Wait For Download Validate Downloaded File Name and should be download successful
+    Verify generate file toast message should be display correctly with '27' records  
 
 
 
