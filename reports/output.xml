@@ -1,458 +1,1932 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-11-09T18:30:51.871647" rpa="false" schemaversion="5">
-<suite id="s1" name="Login Test" source="C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\automation\web\login_test.robot">
-<kw name="Open Application and Login To CCB" owner="login_keywords" type="SETUP">
-<kw name="Load Config" owner="login_keywords">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-11-12T02:54:40.149252" rpa="false" schemaversion="5">
+<suite id="s1" name="Webconverter Testcase" source="C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\automation\web\webconverter_testcase.robot">
+<kw name="Open Application and Login To CCB" owner="webcon_keywords" type="SETUP">
+<kw name="Load Config" owner="common">
 <kw name="Load Yaml" owner="yaml_loader">
-<msg time="2025-11-09T18:30:52.020788" level="INFO">${DATA} = {'environment': 'dev', 'url': 'https://ccbdev.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'kamkamm', 'password': '446825zaZ.'}, 'timeouts': {'element_wai...</msg>
+<msg time="2025-11-12T02:54:40.308839" level="INFO">${DATA} = {'environment': 'uat', 'url': 'https://ccbuat.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'Kamuat', 'password': '446825zaZ.'}, 'timeouts': {'element_wait...</msg>
 <var>${DATA}</var>
 <arg>${EXECDIR}/config/settings.yaml</arg>
-<status status="PASS" start="2025-11-09T18:30:52.019701" elapsed="0.001123"/>
+<status status="PASS" start="2025-11-12T02:54:40.307431" elapsed="0.001444"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-11-09T18:30:52.021147" level="INFO">${CONFIG} = {'environment': 'dev', 'url': 'https://ccbdev.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'kamkamm', 'password': '446825zaZ.'}, 'timeouts': {'element_wai...</msg>
+<msg time="2025-11-12T02:54:40.309238" level="INFO">${CONFIG} = {'environment': 'uat', 'url': 'https://ccbuat.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'Kamuat', 'password': '446825zaZ.'}, 'timeouts': {'element_wait...</msg>
 <arg>${CONFIG}</arg>
 <arg>${DATA}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-11-09T18:30:52.020940" elapsed="0.000244"/>
+<status status="PASS" start="2025-11-12T02:54:40.309010" elapsed="0.000268"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>&gt;&gt;&gt; CONFIG LOADED</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-09T18:30:52.021270" elapsed="0.000211"/>
+<status status="PASS" start="2025-11-12T02:54:40.309378" elapsed="0.000248"/>
 </kw>
-<status status="PASS" start="2025-11-09T18:30:52.019274" elapsed="0.002261"/>
+<status status="PASS" start="2025-11-12T02:54:40.306914" elapsed="0.002788"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-12T02:54:40.310006" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
+<var>${download_dir}</var>
+<arg>${EXECDIR}${/}downloads</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-12T02:54:40.309785" elapsed="0.000244"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:40.310293" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads&lt;/a&gt;' already exists.</msg>
+<arg>${download_dir}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-11-12T02:54:40.310109" elapsed="0.000223"/>
 </kw>
 <kw name="New Browser" owner="Browser">
-<msg time="2025-11-09T18:30:52.022105" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\46bdf53a-c11b-4aab-8435-7cda68e7e815"}</msg>
-<msg time="2025-11-09T18:30:52.034948" level="INFO">Starting Browser process C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:57729</msg>
-<msg time="2025-11-09T18:30:52.692036" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\46bdf53a-c11b-4aab-8435-7cda68e7e815"}</msg>
+<msg time="2025-11-12T02:54:40.310948" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\7fdbb114-db23-4c63-a5ca-0dbc3c6c77e4"}</msg>
+<msg time="2025-11-12T02:54:40.323084" level="INFO">Starting Browser process C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:63542</msg>
+<msg time="2025-11-12T02:54:40.970324" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\7fdbb114-db23-4c63-a5ca-0dbc3c6c77e4"}</msg>
 <arg>${CONFIG}[browser]</arg>
 <arg>headless=${CONFIG}[headless]</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-11-09T18:30:52.021608" elapsed="0.670584"/>
+<status status="PASS" start="2025-11-12T02:54:40.310416" elapsed="0.660085"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2025-11-09T18:30:53.295967" level="INFO">Successfully initialized new page object and opened url: https://ccbdev.tau2904.com/auth/login</msg>
-<msg time="2025-11-09T18:30:53.296034" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<msg time="2025-11-09T18:30:53.296186" level="INFO">${PAGE} = {'page_id': 'page=e266743f-7b20-4048-b986-d6f94dcb5b13', 'video_path': ''}</msg>
+<msg time="2025-11-12T02:54:41.445986" level="INFO">Successfully initialized new page object and opened url: https://ccbuat.tau2904.com/auth/login</msg>
+<msg time="2025-11-12T02:54:41.446051" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2025-11-12T02:54:41.446197" level="INFO">${PAGE} = {'page_id': 'page=6332218f-e120-4936-a854-ed8b99d6b5c2', 'video_path': ''}</msg>
 <var>${PAGE}</var>
 <arg>${CONFIG}[url]</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-11-09T18:30:52.692359" elapsed="0.603850"/>
+<status status="PASS" start="2025-11-12T02:54:40.970725" elapsed="0.475494"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-11-09T18:30:53.296654" level="INFO">${PAGE} = {'page_id': 'page=e266743f-7b20-4048-b986-d6f94dcb5b13', 'video_path': ''}</msg>
+<msg time="2025-11-12T02:54:41.446656" level="INFO">${PAGE} = {'page_id': 'page=6332218f-e120-4936-a854-ed8b99d6b5c2', 'video_path': ''}</msg>
 <arg>${PAGE}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-11-09T18:30:53.296356" elapsed="0.000335"/>
+<status status="PASS" start="2025-11-12T02:54:41.446368" elapsed="0.000324"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:30:53.317581" level="INFO">Waited for Element with selector //input[@type='text'] at state visible</msg>
+<msg time="2025-11-12T02:54:41.467362" level="INFO">Waited for Element with selector //input[@type='text'] at state visible</msg>
 <arg>//input[@type='text']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:30:53.296794" elapsed="0.020918"/>
+<status status="PASS" start="2025-11-12T02:54:41.446802" elapsed="0.020683"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-11-09T18:30:53.318344" level="INFO">Fills the text 'kamkamm' in the given field.</msg>
+<msg time="2025-11-12T02:54:41.468139" level="INFO">Fills the text 'Kamuat' in the given field.</msg>
 <arg>//input[@type='text']</arg>
 <arg>${CONFIG}[CCBUSER][username]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:30:53.317867" elapsed="0.014147"/>
+<status status="PASS" start="2025-11-12T02:54:41.467638" elapsed="0.013656"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-09T18:30:53.332648" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
+<msg time="2025-11-12T02:54:41.481929" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
 <arg>//button[normalize-space()='Next']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:30:53.332180" elapsed="1.364719"/>
+<status status="PASS" start="2025-11-12T02:54:41.481462" elapsed="0.866831"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-11-09T18:30:54.697744" level="INFO">Fills the text '446825zaZ.' in the given field.</msg>
+<msg time="2025-11-12T02:54:42.348954" level="INFO">Fills the text '446825zaZ.' in the given field.</msg>
 <arg>//input[@type='password']</arg>
 <arg>${CONFIG}[CCBUSER][password]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:30:54.697119" elapsed="0.193407"/>
+<status status="PASS" start="2025-11-12T02:54:42.348461" elapsed="0.209969"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-09T18:30:54.891203" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
+<msg time="2025-11-12T02:54:42.559063" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
 <arg>//button[normalize-space()='Next']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:30:54.890742" elapsed="0.028530"/>
+<status status="PASS" start="2025-11-12T02:54:42.558599" elapsed="0.022544"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:30:57.873818" level="INFO">Waited for Element with selector //ca-dashboard-widget[@id='DashboardFinancialSummaryComponent'] at state visible</msg>
+<msg time="2025-11-12T02:54:45.562362" level="INFO">Waited for Element with selector //ca-dashboard-widget[@id='DashboardFinancialSummaryComponent'] at state visible</msg>
 <arg>//ca-dashboard-widget[@id='DashboardFinancialSummaryComponent']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:30:54.919440" elapsed="2.954517"/>
+<status status="PASS" start="2025-11-12T02:54:42.581343" elapsed="2.981142"/>
 </kw>
-<status status="PASS" start="2025-11-09T18:30:52.018990" elapsed="5.855082"/>
+<status status="PASS" start="2025-11-12T02:54:40.306610" elapsed="5.255973"/>
 </kw>
-<test id="s1-t1" name="TS001_TC007: Create new file : Upload file TBank format - CMS001" line="7">
-<kw name="Go To Create Payment Import File From Payment" owner="login_keywords">
+<test id="s1-t1" name="TS001_TC007: Create new file : Upload file TBank format - CMS001" line="16">
+<kw name="Go To Create Payment Import File From Payment" owner="webcon_keywords">
 <kw name="Click" owner="Browser">
-<msg time="2025-11-09T18:30:57.879452" level="INFO">Clicks the element '//span[normalize-space()='Payment']'.</msg>
+<msg time="2025-11-12T02:54:45.567187" level="INFO">Clicks the element '//span[normalize-space()='Payment']'.</msg>
 <arg>//span[normalize-space()='Payment']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:30:57.879073" elapsed="0.870001"/>
+<status status="PASS" start="2025-11-12T02:54:45.566724" elapsed="1.388344"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:30:58.754633" level="INFO">Waited for Element with selector //span[normalize-space()='Create payment Import file'] at state visible</msg>
-<arg>//span[normalize-space()='Create payment Import file']</arg>
+<msg time="2025-11-12T02:54:46.959298" level="INFO">Waited for Element with selector //span[normalize-space()='Create Payment Import File'] at state visible</msg>
+<arg>//span[normalize-space()='Create Payment Import File']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:30:58.749304" elapsed="0.005449"/>
+<status status="PASS" start="2025-11-12T02:54:46.955240" elapsed="0.004173"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-09T18:30:58.755350" level="INFO">Clicks the element '//span[normalize-space()='Create payment Import file']'.</msg>
-<arg>//span[normalize-space()='Create payment Import file']</arg>
+<msg time="2025-11-12T02:54:46.959991" level="INFO">Clicks the element '//span[normalize-space()='Create Payment Import File']'.</msg>
+<arg>//span[normalize-space()='Create Payment Import File']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:30:58.754900" elapsed="0.047008"/>
+<status status="PASS" start="2025-11-12T02:54:46.959560" elapsed="0.043043"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.182335" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')]</arg>
+<msg time="2025-11-12T02:54:47.286100" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')] at state visible</msg>
+<arg>${iframe} &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')]</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:30:58.802076" elapsed="1.380433"/>
+<status status="PASS" start="2025-11-12T02:54:47.002824" elapsed="0.283415"/>
 </kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.188236" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter']</arg>
-<arg>visible</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.182734" elapsed="0.005602"/>
+<status status="PASS" start="2025-11-12T02:54:45.566347" elapsed="1.719982"/>
 </kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.192435" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']</arg>
-<arg>visible</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.188470" elapsed="0.004060"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.198975" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Convert file'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Convert file']</arg>
-<arg>visible</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.192664" elapsed="0.006440"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.203508" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Recipient lists'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Recipient lists']</arg>
-<arg>visible</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.199260" elapsed="0.004343"/>
-</kw>
-<status status="PASS" start="2025-11-09T18:30:57.878660" elapsed="2.325018"/>
-</kw>
-<kw name="Click create new file button" owner="login_keywords">
+<kw name="Click create new file button" owner="webcon_keywords">
 <kw name="Click" owner="Browser">
-<msg time="2025-11-09T18:31:00.204607" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']'.</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']</arg>
+<msg time="2025-11-12T02:54:47.287359" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']'.</msg>
+<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Create new file']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.204265" elapsed="0.057135"/>
+<status status="PASS" start="2025-11-12T02:54:47.286947" elapsed="0.866131"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>Clicked create new file button</arg>
+<arg>✅ Clicked create new file button</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.261560" elapsed="0.000404"/>
+<status status="PASS" start="2025-11-12T02:54:48.153241" elapsed="0.000412"/>
 </kw>
-<status status="PASS" start="2025-11-09T18:31:00.203933" elapsed="0.058115"/>
+<status status="PASS" start="2025-11-12T02:54:47.286609" elapsed="0.867132"/>
 </kw>
-<kw name="Verify detail in modal default Upload file to edit transaction when click create new file" owner="login_keywords">
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.266982" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Select type'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Select type']</arg>
-<arg>visible</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.262542" elapsed="0.004549"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.272971" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Create new file'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Create new file']</arg>
-<arg>visible</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.267234" elapsed="0.005869"/>
-</kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.278465" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']</arg>
-<arg>visible</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.273253" elapsed="0.005333"/>
-</kw>
+<kw name="Verify detail in modal default Upload file to edit transaction when click create new file" owner="webcon_keywords">
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-09T18:31:00.294096" level="INFO">Text: 'Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format'</msg>
-<msg time="2025-11-09T18:31:00.294216" level="INFO">${msg} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
+<msg time="2025-11-12T02:54:48.173155" level="INFO">Text: 'Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format'</msg>
+<msg time="2025-11-12T02:54:48.173270" level="INFO">${msg} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
 <var>${msg}</var>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'Support only ttb format')]</arg>
+<arg>${iframe} &gt;&gt;&gt; //p[contains(text(),'Support only ttb format')]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.278728" elapsed="0.015510"/>
+<status status="PASS" start="2025-11-12T02:54:48.154230" elapsed="0.019061"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-09T18:31:00.294675" level="INFO">${expected} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
+<msg time="2025-11-12T02:54:48.173741" level="INFO">${expected} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
 <var>${expected}</var>
 <arg>${CONFIG}[Expected_messages][Upload_file_to_edit_transaction_detail]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.294372" elapsed="0.000325"/>
+<status status="PASS" start="2025-11-12T02:54:48.173435" elapsed="0.000329"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${msg}</arg>
 <arg>${expected}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.294791" elapsed="0.000180"/>
+<status status="PASS" start="2025-11-12T02:54:48.173865" elapsed="0.000188"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>&gt;&gt;&gt; Upload file to edit transaction detail (Matched: ${expected})</arg>
+<arg>✅ Upload file modal verified</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.295050" elapsed="0.000304"/>
+<status status="PASS" start="2025-11-12T02:54:48.174136" elapsed="0.000231"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-09T18:31:00.295829" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']'.</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']</arg>
+<msg time="2025-11-12T02:54:48.174835" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']'.</msg>
+<arg>${iframe} &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.295466" elapsed="0.027776"/>
+<status status="PASS" start="2025-11-12T02:54:48.174455" elapsed="0.030274"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-09T18:31:00.323872" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
+<msg time="2025-11-12T02:54:48.205427" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
+<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.323403" elapsed="0.033639"/>
+<status status="PASS" start="2025-11-12T02:54:48.204893" elapsed="0.032308"/>
 </kw>
-<status status="PASS" start="2025-11-09T18:31:00.262240" elapsed="0.094906"/>
+<status status="PASS" start="2025-11-12T02:54:48.153942" elapsed="0.083364"/>
 </kw>
-<kw name="Verify Upload payment file page should be display correctly" owner="login_keywords">
+<kw name="Verify Upload payment file page should be display correctly" owner="webcon_keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.396421" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload payment file'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload payment file']</arg>
+<msg time="2025-11-12T02:54:48.244838" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload payment file'] at state visible</msg>
+<arg>${iframe} &gt;&gt;&gt; //p[normalize-space()='Upload payment file']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.357752" elapsed="0.038800"/>
+<status status="PASS" start="2025-11-12T02:54:48.238000" elapsed="0.006955"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-09T18:31:00.404959" level="INFO">Text: 'You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The system supports uploading ttb format (SAPFORMAT and SAPFORMAT NEW) and TBank format (CMS001, CMS002, CMS005, CMS030, MCS001 and MCS003)'</msg>
-<msg time="2025-11-09T18:31:00.405071" level="INFO">${msg} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
+<msg time="2025-11-12T02:54:48.253937" level="INFO">Text: 'You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The system supports uploading ttb format (SAPFORMAT and SAPFORMAT NEW) and TBank format (CMS001, CMS002, CMS005, CMS030, MCS001 and MCS003)'</msg>
+<msg time="2025-11-12T02:54:48.254063" level="INFO">${msg} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
 <var>${msg}</var>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'You can edit detail in existing file')]</arg>
+<arg>${iframe} &gt;&gt;&gt; //p[contains(text(),'You can edit detail in existing file')]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.396705" elapsed="0.008388"/>
+<status status="PASS" start="2025-11-12T02:54:48.245110" elapsed="0.008975"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-09T18:31:00.405519" level="INFO">${expected} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
+<msg time="2025-11-12T02:54:48.254564" level="INFO">${expected} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
 <var>${expected}</var>
 <arg>${CONFIG}[Expected_messages][Upload_payment_file_detail]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.405227" elapsed="0.000317"/>
+<status status="PASS" start="2025-11-12T02:54:48.254244" elapsed="0.000344"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${msg}</arg>
 <arg>${expected}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.405639" elapsed="0.000194"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>&gt;&gt;&gt; Upload payment file detail (Matched: ${expected})</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.405912" elapsed="0.000358"/>
+<status status="PASS" start="2025-11-12T02:54:48.254696" elapsed="0.000196"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.410916" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@data-testid='dropbox-testid'] at state visible</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@data-testid='dropbox-testid']</arg>
+<msg time="2025-11-12T02:54:48.260275" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@data-testid='dropbox-testid'] at state visible</msg>
+<arg>${iframe} &gt;&gt;&gt; //div[@data-testid='dropbox-testid']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.406384" elapsed="0.004646"/>
+<status status="PASS" start="2025-11-12T02:54:48.255079" elapsed="0.005325"/>
 </kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:00.418152" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state disabled</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
-<arg>disabled</arg>
-<arg>${CONFIG}[timeouts][element_wait]</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.411168" elapsed="0.007096"/>
+<status status="PASS" start="2025-11-12T02:54:48.237560" elapsed="0.022932"/>
 </kw>
-<kw name="Take Screenshot" owner="Browser">
-<msg time="2025-11-09T18:31:00.468915" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
-<tag>PageContent</tag>
-<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.418408" elapsed="0.050624"/>
-</kw>
-<status status="PASS" start="2025-11-09T18:31:00.357391" elapsed="0.111719"/>
-</kw>
-<kw name="Upload File To Drop Zone" owner="login_keywords">
+<kw name="Upload File To Drop Zone" owner="webcon_keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-09T18:31:00.469963" level="INFO">${file_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\keywords\..\..\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt</msg>
+<msg time="2025-11-12T02:54:48.261876" level="INFO">${file_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\keywords\..\..\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt</msg>
 <var>${file_path}</var>
 <arg>C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\resources\\keywords${/}..${/}..${/}resources${/}testdata${/}common${/}Web_Converter${/}${filename}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.469688" elapsed="0.000299"/>
+<status status="PASS" start="2025-11-12T02:54:48.261389" elapsed="0.000520"/>
 </kw>
 <kw name="File Should Exist" owner="OperatingSystem">
-<msg time="2025-11-09T18:31:00.470298" level="INFO" html="true">File '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt&lt;/a&gt;' exists.</msg>
+<msg time="2025-11-12T02:54:48.262409" level="INFO" html="true">File '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt&lt;/a&gt;' exists.</msg>
 <arg>${file_path}</arg>
 <doc>Fails unless the given ``path`` points to an existing file.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.470070" elapsed="0.000272"/>
+<status status="PASS" start="2025-11-12T02:54:48.262048" elapsed="0.000436"/>
 </kw>
 <kw name="Upload File By Selector" owner="Browser">
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //input[@type='file']</arg>
+<arg>${iframe} &gt;&gt;&gt; //input[@type='file']</arg>
 <arg>${file_path}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Uploads file from ``path`` to file input element matched by selector.</doc>
-<status status="PASS" start="2025-11-09T18:31:00.470432" elapsed="0.014002"/>
+<status status="PASS" start="2025-11-12T02:54:48.262612" elapsed="0.014457"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-09T18:31:30.562223" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
-<msg time="2025-11-09T18:31:30.562360" level="INFO">See also file:///C:/Users/Grxxn/Desktop/All%20File%20Automate/Automation-assignment/reports/playwright-log.txt for additional details.</msg>
-<msg time="2025-11-09T18:31:30.562640" level="FAIL">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
-Call log:
-  - attempting wait for enabled action
-    2 × element is not enabled
-    - retrying wait for enabled action
-    - waiting 20ms
-    2 × element is not enabled
-    - retrying wait for enabled action
-      - waiting 100ms
-    59 × element is not enabled
-     - retrying wait for enabled action
-       - waiting 500ms
-</msg>
-<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
+<msg time="2025-11-12T02:54:48.418941" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state enabled</msg>
+<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
 <arg>enabled</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="FAIL" start="2025-11-09T18:31:00.484802" elapsed="30.080729">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
-Call log:
-  - attempting wait for enabled action
-    2 × element is not enabled
-    - retrying wait for enabled action
-    - waiting 20ms
-    2 × element is not enabled
-    - retrying wait for enabled action
-      - waiting 100ms
-    59 × element is not enabled
-     - retrying wait for enabled action
-       - waiting 500ms
-</status>
+<status status="PASS" start="2025-11-12T02:54:48.277299" elapsed="0.141765"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>File uploaded: ${filename}</arg>
+<arg>✅ File uploaded: ${filename}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-11-09T18:31:30.565694" elapsed="0.000129"/>
+<status status="PASS" start="2025-11-12T02:54:48.419219" elapsed="0.000463"/>
 </kw>
 <arg>CONVERT_CMS001.txt</arg>
-<status status="FAIL" start="2025-11-09T18:31:00.469366" elapsed="30.096572">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
-Call log:
-  - attempting wait for enabled action
-    2 × element is not enabled
-    - retrying wait for enabled action
-    - waiting 20ms
-    2 × element is not enabled
-    - retrying wait for enabled action
-      - waiting 100ms
-    59 × element is not enabled
-     - retrying wait for enabled action
-       - waiting 500ms
-</status>
+<status status="PASS" start="2025-11-12T02:54:48.260787" elapsed="0.158983"/>
+</kw>
+<kw name="Verify file uploaded successfully" owner="webcon_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.424458" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[text()='File Uploaded Successfully'] at state visible</msg>
+<arg>${iframe} &gt;&gt;&gt; //p[text()='File Uploaded Successfully']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.420305" elapsed="0.004260"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-12T02:54:48.433337" level="INFO">Text: 'File Uploaded Successfully'</msg>
+<msg time="2025-11-12T02:54:48.433447" level="INFO">${msg} = File Uploaded Successfully</msg>
+<var>${msg}</var>
+<arg>${iframe} &gt;&gt;&gt; //p[text()='File Uploaded Successfully']</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.424760" elapsed="0.008708"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-12T02:54:48.433917" level="INFO">${expected} = File Uploaded Successfully</msg>
+<var>${expected}</var>
+<arg>${CONFIG}[Expected_messages][Upload_payment_file_success]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.433609" elapsed="0.000331"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.434038" elapsed="0.000188"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ File upload success verified</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.434310" elapsed="0.000244"/>
+</kw>
+<status status="PASS" start="2025-11-12T02:54:48.419968" elapsed="0.014646"/>
+</kw>
+<kw name="Verify file name should be display correctly" owner="webcon_keywords">
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-12T02:54:48.444186" level="INFO">Text: 'CONVERT_CMS001.txt'</msg>
+<msg time="2025-11-12T02:54:48.444299" level="INFO">${displayed_filename} = CONVERT_CMS001.txt</msg>
+<var>${displayed_filename}</var>
+<arg>${iframe} &gt;&gt;&gt; //p[text()='${filename}']</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.435021" elapsed="0.009300"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${displayed_filename}</arg>
+<arg>${filename}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.444459" elapsed="0.000346"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ File name displayed correctly: ${filename}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.444917" elapsed="0.000286"/>
+</kw>
+<arg>CONVERT_CMS001.txt</arg>
+<status status="PASS" start="2025-11-12T02:54:48.434760" elapsed="0.010500"/>
+</kw>
+<kw name="Click next button on create payment import file page" owner="webcon_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.452440" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state enabled</msg>
+<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
+<arg>enabled</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.445725" elapsed="0.006838"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-12T02:54:48.453220" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next']'.</msg>
+<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.452713" elapsed="0.044813"/>
+</kw>
+<status status="PASS" start="2025-11-12T02:54:48.445447" elapsed="0.052190"/>
+</kw>
+<kw name="Input Tax ID" owner="webcon_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.503954" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //input[@data-testid="textfield__tax_id"] at state visible</msg>
+<arg>${iframe} &gt;&gt;&gt; //input[@data-testid="textfield__tax_id"]</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.498437" elapsed="0.005718"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-12T02:54:48.504875" level="INFO">Fills the text '7740207838471' in the given field.</msg>
+<arg>${iframe} &gt;&gt;&gt; //input[@data-testid="textfield__tax_id"]</arg>
+<arg>${CONFIG}[Tax ID]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.504328" elapsed="0.007454"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Input Tax ID: ${CONFIG}[Tax ID]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.511983" elapsed="0.000625"/>
+</kw>
+<status status="PASS" start="2025-11-12T02:54:48.498043" elapsed="0.014699"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-12T02:54:48.513550" level="INFO">${expected_payment_types} = ['DCS', 'DDS', 'PAY']</msg>
+<var>${expected_payment_types}</var>
+<arg>DCS</arg>
+<arg>DDS</arg>
+<arg>PAY</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.513163" elapsed="0.000424"/>
+</kw>
+<kw name="Verify Payment Type Options with:" owner="webcon_keywords">
+<for flavor="IN">
+<iter>
+<kw name="Get Element" owner="Browser">
+<msg time="2025-11-12T02:54:48.724881" level="INFO">Locator found successfully.</msg>
+<arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value="${value}"]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-11-12T02:54:48.514757" elapsed="0.210246"/>
+</kw>
+<var name="${value}">DCS</var>
+<status status="PASS" start="2025-11-12T02:54:48.514533" elapsed="0.210537"/>
+</iter>
+<iter>
+<kw name="Get Element" owner="Browser">
+<msg time="2025-11-12T02:54:48.729473" level="INFO">Locator found successfully.</msg>
+<arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value="${value}"]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-11-12T02:54:48.725424" elapsed="0.004151"/>
+</kw>
+<var name="${value}">DDS</var>
+<status status="PASS" start="2025-11-12T02:54:48.725198" elapsed="0.004434"/>
+</iter>
+<iter>
+<kw name="Get Element" owner="Browser">
+<msg time="2025-11-12T02:54:48.735334" level="INFO">Locator found successfully.</msg>
+<arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value="${value}"]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-11-12T02:54:48.729942" elapsed="0.005511"/>
+</kw>
+<var name="${value}">PAY</var>
+<status status="PASS" start="2025-11-12T02:54:48.729735" elapsed="0.005782"/>
+</iter>
+<var>${value}</var>
+<value>@{expected_options}</value>
+<status status="PASS" start="2025-11-12T02:54:48.514244" elapsed="0.221313"/>
+</for>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-11-12T02:54:48.740746" level="INFO">${actual_count} = 3</msg>
+<var>${actual_count}</var>
+<arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value]:not([value=""])</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.735687" elapsed="0.005094"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:48.741180" level="INFO">Length is 3.</msg>
+<msg time="2025-11-12T02:54:48.741238" level="INFO">${expected_count} = 3</msg>
+<var>${expected_count}</var>
+<arg>${expected_options}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.740917" elapsed="0.000337"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<arg>${actual_count}</arg>
+<arg>${expected_count}</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.741354" elapsed="0.000215"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Payment type options verified: ${expected_options}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.741657" elapsed="0.000298"/>
+</kw>
+<arg>${expected_payment_types}</arg>
+<status status="PASS" start="2025-11-12T02:54:48.513872" elapsed="0.228160"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-12T02:54:48.742707" level="INFO">${transaction_data.debit_account} = 612 1 00882 2</msg>
+<var>${transaction_data.debit_account}</var>
+<arg>612 1 00882 2</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.742194" elapsed="0.000538"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-11-12T02:54:48.743081" level="INFO">${current_date} = 12-11-2025</msg>
+<var>${current_date}</var>
+<arg>result_format=%d-%m-%Y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.742859" elapsed="0.000242"/>
+</kw>
+<kw name="Input information for create new file with payment type: 'DDS' with debit account: '${transaction_data.debit_account}' and with date: '${current_date}'" owner="webcon_keywords" source_name="Input information for create new file with payment type: '${payment_type}' with debit account: '${debit_account}' and with date: '${current_date}'">
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-12T02:54:48.751550" level="INFO">Text: 'Fill information'</msg>
+<arg>${iframe} &gt;&gt;&gt; //div[contains(@class,"Modal_modal--header")]/p</arg>
+<arg>should be</arg>
+<arg>Fill information</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.743570" elapsed="0.008068"/>
+</kw>
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.756786" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //label[text()="Debit Account"]/parent::div at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.752195" elapsed="0.004709"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-12T02:54:48.757540" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //label[text()="Debit Account"]/parent::div'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.757050" elapsed="0.030516"/>
+</kw>
+<arg>//label[text()="Debit Account"]/parent::div</arg>
+<status status="PASS" start="2025-11-12T02:54:48.751810" elapsed="0.035861"/>
+</kw>
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.793639" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@id="portal-top-layer"]//p[text()="612 1 00882 2"] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.788226" elapsed="0.005622"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-12T02:54:48.794475" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@id="portal-top-layer"]//p[text()="612 1 00882 2"]'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.794003" elapsed="0.028366"/>
+</kw>
+<arg>//div[@id="portal-top-layer"]//p[text()="${debit_account}"]</arg>
+<status status="PASS" start="2025-11-12T02:54:48.787805" elapsed="0.034665"/>
+</kw>
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.827248" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.822978" elapsed="0.004374"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-12T02:54:48.827924" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.827485" elapsed="0.026492"/>
+</kw>
+<arg>//div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div</arg>
+<status status="PASS" start="2025-11-12T02:54:48.822602" elapsed="0.031480"/>
+</kw>
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.859814" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //li[@data-testid="dropdown-list-DDS"] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.854623" elapsed="0.005327"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-12T02:54:48.860583" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //li[@data-testid="dropdown-list-DDS"]'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.860097" elapsed="0.023461"/>
+</kw>
+<arg>//li[@data-testid="dropdown-list-${payment_type}"]</arg>
+<status status="PASS" start="2025-11-12T02:54:48.854216" elapsed="0.029441"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-12T02:54:48.884294" level="INFO">Fills the text '12-11-2025' in the given field.</msg>
+<arg>${iframe} &gt;&gt;&gt; //label[text()="Effective Date"]/following-sibling::input</arg>
+<arg>${current_date}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.883770" elapsed="0.007213"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${iframe} &gt;&gt;&gt; //label[text()="Effective Date"]/following-sibling::input</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.891156" elapsed="0.011477"/>
+</kw>
+<kw name="Check And Fill Company Address" owner="common">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.906960" level="INFO">Waited for Element with selector //iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"] at state visible</msg>
+<arg>//iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"]</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.903425" elapsed="0.003634"/>
+</kw>
+<msg time="2025-11-12T02:54:48.907158" level="INFO">${address_visible} = True</msg>
+<var>${address_visible}</var>
+<arg>Wait For Elements State</arg>
+<arg>//iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"]</arg>
+<arg>visible</arg>
+<arg>timeout=2s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.903217" elapsed="0.003959"/>
+</kw>
+<if>
+<branch type="IF" condition="${address_visible}">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-12T02:54:48.907688" level="INFO">${company_address} = 111 - NA DUN, NA DUN MAHA SARAKHAM 44180</msg>
+<var>${company_address}</var>
+<arg>${CONFIG}[Company Address]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.907493" elapsed="0.000216"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-12T02:54:48.908141" level="INFO">Fills the text '111 - NA DUN, NA DUN MAHA SARAKHAM 44180' in the given field.</msg>
+<arg>//iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"]</arg>
+<arg>${company_address}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.907795" elapsed="0.006961"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Filled Company Address: ${company_address}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.914956" elapsed="0.000480"/>
+</kw>
+<status status="PASS" start="2025-11-12T02:54:48.907263" elapsed="0.008234"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Company Address field not required or not visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-11-12T02:54:48.915788" elapsed="0.000106"/>
+</kw>
+<status status="NOT RUN" start="2025-11-12T02:54:48.915563" elapsed="0.000376"/>
+</branch>
+<status status="PASS" start="2025-11-12T02:54:48.907239" elapsed="0.008734"/>
+</if>
+<status status="PASS" start="2025-11-12T02:54:48.902871" elapsed="0.013155"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Fill information completed successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.916117" elapsed="0.000282"/>
+</kw>
+<status status="PASS" start="2025-11-12T02:54:48.743294" elapsed="0.173182"/>
+</kw>
+<kw name="Click confirm button" owner="webcon_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:48.924518" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm'] at state enabled</msg>
+<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
+<arg>enabled</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.916895" elapsed="0.007786"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-12T02:54:48.925351" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
+<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:48.924839" elapsed="0.106187"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Clicked confirm button</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.031186" elapsed="0.000382"/>
+</kw>
+<status status="PASS" start="2025-11-12T02:54:48.916646" elapsed="0.115008"/>
+</kw>
+<kw name="Set To Dictionary" owner="Collections">
+<arg>${file_data.TS001_TC007}</arg>
+<arg>Effective_Date=${current_date}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.031871" elapsed="0.000271"/>
+</kw>
+<kw name="Verify File summary should be display correctly with file details:" owner="webcon_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-12T02:54:49.037306" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='File Summary'] at state visible</msg>
+<arg>${iframe} &gt;&gt;&gt; //p[normalize-space()='File Summary']</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.032677" elapsed="0.004723"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-12T02:54:49.045393" level="INFO">Text: 'Direct Debit'</msg>
+<msg time="2025-11-12T02:54:49.045512" level="INFO">${ui_payment_type} = Direct Debit</msg>
+<var>${ui_payment_type}</var>
+<arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Payment']/following-sibling::p</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.037523" elapsed="0.008010"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-12T02:54:49.057942" level="INFO">Text: '12-11-2025'</msg>
+<msg time="2025-11-12T02:54:49.058054" level="INFO">${ui_effective_date} = 12-11-2025</msg>
+<var>${ui_effective_date}</var>
+<arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Effective Date']/following-sibling::p</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.045683" elapsed="0.012391"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-12T02:54:49.112472" level="INFO">Text: '27'</msg>
+<msg time="2025-11-12T02:54:49.112585" level="INFO">${ui_transaction_count} = 27</msg>
+<var>${ui_transaction_count}</var>
+<arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Transaction(s)']/following-sibling::p</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.058221" elapsed="0.054384"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-12T02:54:49.128122" level="INFO">Text: 'THB 2,331,639.00'</msg>
+<msg time="2025-11-12T02:54:49.128237" level="INFO">${ui_total_amount} = THB 2,331,639.00</msg>
+<var>${ui_total_amount}</var>
+<arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Total amount']/following-sibling::p</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.112766" elapsed="0.015491"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${ui_payment_type}</arg>
+<arg>${expected_data}[Payment_Type]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.128401" elapsed="0.000336"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${ui_effective_date}</arg>
+<arg>${expected_data}[Effective_Date]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.128843" elapsed="0.000195"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${ui_transaction_count}</arg>
+<arg>${expected_data}[Transaction_Count]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.129118" elapsed="0.000170"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${ui_total_amount}</arg>
+<arg>${expected_data}[Total_Amount]</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.129362" elapsed="0.000150"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ File summary verified successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.129586" elapsed="0.000218"/>
+</kw>
+<arg>${file_data.TS001_TC007}</arg>
+<status status="PASS" start="2025-11-12T02:54:49.032371" elapsed="0.097484"/>
+</kw>
+<kw name="Click Generate File Button And Wait For Download" owner="webcon_keywords">
+<kw name="Click" owner="Browser">
+<msg time="2025-11-12T02:54:49.130790" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //footer/button[normalize-space()='Generate file']'.</msg>
+<arg>${iframe} &gt;&gt;&gt; //footer/button[normalize-space()='Generate file']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.130395" elapsed="0.047665"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Clicked Generate file button</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.178235" elapsed="0.000409"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-12T02:54:51.179941" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-12T02:54:49.178783" elapsed="2.001443"/>
+</kw>
+<status status="PASS" start="2025-11-12T02:54:49.130125" elapsed="2.050376"/>
+</kw>
+<kw name="Validate Downloaded File Name and should be download successful" owner="webcon_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-12T02:54:51.183002" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
+<var>${download_dir}</var>
+<arg>${EXECDIR}${/}downloads</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-12T02:54:51.182421" elapsed="0.000642"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-11-12T02:54:51.183766" level="INFO">${expected_date} = 121125</msg>
+<var>${expected_date}</var>
+<arg>result_format=%d%m%y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-11-12T02:54:51.183286" elapsed="0.000528"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-12T02:54:51.184575" level="INFO">${downloads_folder} = C:\Users\Grxxn\Downloads</msg>
+<var>${downloads_folder}</var>
+<arg>os.path.join(os.path.expanduser('~'), 'Downloads')</arg>
+<arg>modules=os</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-12T02:54:51.184073" elapsed="0.000542"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-12T02:54:51.185087" level="INFO">${pattern} = DDS_121125_*_27.txt</msg>
+<var>${pattern}</var>
+<arg>DDS_${expected_date}_*_27.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-12T02:54:51.184783" elapsed="0.000337"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:51.186476" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:51.187172" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:51.187258" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:51.186092" elapsed="0.001190"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:51.187554" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:51.187602" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:51.187388" elapsed="0.000231"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:51.187988" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:51.187703" elapsed="0.000390">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:51.185637" elapsed="0.002547">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:52.190868" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:52.192439" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:52.192698" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:52.190116" elapsed="0.002646"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:52.193573" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:52.193720" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:52.193092" elapsed="0.000676"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:52.194454" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:52.194023" elapsed="0.000492">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:52.188914" elapsed="0.005685">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:53.196056" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:53.196534" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:53.196614" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:53.195810" elapsed="0.000823"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:53.196893" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:53.196940" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:53.196738" elapsed="0.000218"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:53.197297" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:53.197035" elapsed="0.000314">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:53.195025" elapsed="0.002404">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:54.200727" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:54.201821" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:54.202017" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:54.200162" elapsed="0.001907"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:54.202776" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:54.202912" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:54.202349" elapsed="0.000613"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:54.203429" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:54.203176" elapsed="0.000299">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:54.198499" elapsed="0.005051">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:55.206938" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:55.208323" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:55.208540" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:55.206102" elapsed="0.002489"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:55.209336" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:55.209447" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:55.208937" elapsed="0.000548"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:55.210208" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:55.209672" elapsed="0.000631">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:55.204568" elapsed="0.005878">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:56.214470" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:56.216305" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:56.216625" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:56.213534" elapsed="0.003175"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:56.217015" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:56.217061" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:56.216867" elapsed="0.000210"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:56.217421" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:56.217159" elapsed="0.000314">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:56.212065" elapsed="0.005488">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:57.221122" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:57.222324" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:57.222504" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:57.220395" elapsed="0.002156"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:57.223107" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:57.223206" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:57.222784" elapsed="0.000457"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:57.223878" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:57.223405" elapsed="0.000573">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:57.218932" elapsed="0.005179">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:58.225443" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:58.226079" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:58.226183" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:58.225109" elapsed="0.001099"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:58.226537" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:58.226594" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:58.226340" elapsed="0.000274"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:58.227034" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:58.226710" elapsed="0.000385">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:58.224562" elapsed="0.002632">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:54:59.229300" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:54:59.230316" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:54:59.230492" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:54:59.228841" elapsed="0.001696"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:54:59.231173" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:54:59.231306" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:54:59.230788" elapsed="0.000638"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:54:59.232805" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:54:59.231673" elapsed="0.001280">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:54:59.228083" elapsed="0.005085">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:00.235144" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:00.236002" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:00.236149" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:00.234675" elapsed="0.001511"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:00.236758" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:00.236855" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:00.236444" elapsed="0.000444"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:00.237607" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:00.237058" elapsed="0.000649">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:00.233712" elapsed="0.004174">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:01.239239" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:01.240055" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:01.240196" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:01.238865" elapsed="0.001367"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:01.240719" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:01.240813" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:01.240429" elapsed="0.000414"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:01.241468" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:01.240996" elapsed="0.000578">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:01.238251" elapsed="0.003483">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:02.243779" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:02.245075" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:02.245298" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:02.243206" elapsed="0.002154"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:02.246268" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:02.246423" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:02.245685" elapsed="0.000791"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:02.247510" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:02.246738" elapsed="0.000905">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:02.242264" elapsed="0.005516">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:03.250308" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:03.251479" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:03.251687" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:03.249773" elapsed="0.001969"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:03.252530" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:03.253197" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:03.252035" elapsed="0.001346"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:03.254643" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:03.253825" elapsed="0.000950">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:03.248886" elapsed="0.006107">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:04.257369" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:04.258566" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:04.258789" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:04.256832" elapsed="0.002015"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:04.259649" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:04.259807" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:04.259144" elapsed="0.000717"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:04.261062" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:04.260117" elapsed="0.001094">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:04.255916" elapsed="0.005420">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:05.262275" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:05.262765" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:05.262846" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:05.262055" elapsed="0.000809"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:05.263119" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:05.263164" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:05.262969" elapsed="0.000209"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:05.263514" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:05.263254" elapsed="0.000313">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:05.261638" elapsed="0.002009">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:06.265258" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:06.265730" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:06.265813" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:06.265030" elapsed="0.000803"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:06.266092" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:06.266140" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:06.265936" elapsed="0.000219"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:06.266497" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:06.266234" elapsed="0.000312">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:06.264597" elapsed="0.002031">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:07.268780" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:07.269715" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:07.269873" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:07.268213" elapsed="0.001701"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:07.270466" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:07.270572" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:07.270126" elapsed="0.000482"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:07.271421" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:07.270796" elapsed="0.000762">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:07.267227" elapsed="0.004883">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:08.275019" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:08.275976" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:08.276212" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:08.274470" elapsed="0.001787"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:08.276835" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:08.276940" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:08.276485" elapsed="0.000491"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:08.277740" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:08.277158" elapsed="0.000706">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:08.273430" elapsed="0.004627">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:09.280226" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:09.282141" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:09.282519" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:09.279845" elapsed="0.002760"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:09.283577" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:09.283628" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:09.283059" elapsed="0.000584"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:09.284003" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:09.283731" elapsed="0.000328">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:09.279350" elapsed="0.004792">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:10.286713" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:10.288157" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:10.288426" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:10.285914" elapsed="0.002577"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:10.289280" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:10.289323" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:10.288838" elapsed="0.000499"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:10.289658" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:10.289410" elapsed="0.000299">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:10.284776" elapsed="0.005008">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:11.293279" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:11.294484" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:11.294673" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:11.292570" elapsed="0.002152"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:11.295318" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:11.295419" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:11.294958" elapsed="0.000496"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:11.296120" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:11.295618" elapsed="0.000592">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:11.291230" elapsed="0.005115">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:12.298088" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:12.298533" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:12.298604" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:12.297884" elapsed="0.000736"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:12.298852" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:12.298895" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:12.298714" elapsed="0.000195"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:12.299235" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:12.298984" elapsed="0.000301">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:12.297483" elapsed="0.001878">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:13.302316" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:13.304165" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:13.304481" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:13.301440" elapsed="0.003127"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:13.304994" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:13.305037" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:13.304858" elapsed="0.000193"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:13.305371" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:13.305129" elapsed="0.000294">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:13.300039" elapsed="0.005460">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:14.308874" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:14.310214" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:14.310417" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:14.308136" elapsed="0.002336"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:14.311190" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:14.311336" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:14.310756" elapsed="0.000632"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:14.312290" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:14.311642" elapsed="0.000696">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:14.306963" elapsed="0.005447">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:15.315172" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:15.316771" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:15.317018" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:15.314362" elapsed="0.002719"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:15.317833" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:15.317964" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:15.317376" elapsed="0.000630"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:15.318864" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:15.318216" elapsed="0.000760">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:15.313074" elapsed="0.006075">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:16.322269" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:16.323617" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:16.323863" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:16.321616" elapsed="0.002307"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:16.324765" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:16.324923" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:16.324246" elapsed="0.000729"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:16.325919" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:16.325217" elapsed="0.000827">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:16.320519" elapsed="0.005709">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:17.328944" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:17.330419" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:17.330645" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:17.328193" elapsed="0.002505"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:17.331368" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:17.331486" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:17.330963" elapsed="0.000561"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:17.332081" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:17.331720" elapsed="0.000411">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:17.326829" elapsed="0.005376">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:18.335049" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:18.336502" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:18.336792" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:18.334372" elapsed="0.002491"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:18.338382" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:18.338577" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:18.337603" elapsed="0.001037"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:18.340005" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:18.338964" elapsed="0.001242">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:18.333322" elapsed="0.007212">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:19.343290" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:19.344487" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:19.344676" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:19.342386" elapsed="0.002369"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:19.345354" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:19.345458" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:19.345002" elapsed="0.000492"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:19.346388" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:19.345670" elapsed="0.000820">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:19.341101" elapsed="0.005673">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:20.348855" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:20.349766" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:20.349934" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:20.348444" elapsed="0.001530"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:20.350542" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:20.350647" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:20.350189" elapsed="0.000495"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:20.351471" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:20.350875" elapsed="0.000710">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:20.347726" elapsed="0.004051">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="File Should Exist In Folder" owner="common">
+<kw name="List Files In Directory" owner="OperatingSystem">
+<msg time="2025-11-12T02:55:21.355699" level="INFO" html="true">Listing contents of directory '&lt;a href="file://C:\Users\Grxxn\Downloads"&gt;C:\Users\Grxxn\Downloads&lt;/a&gt;'.</msg>
+<msg time="2025-11-12T02:55:21.357439" level="INFO">0 files:
+</msg>
+<msg time="2025-11-12T02:55:21.357693" level="INFO">@{files} = [ ]</msg>
+<var>@{files}</var>
+<arg>${folder}</arg>
+<arg>${pattern}</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="PASS" start="2025-11-12T02:55:21.354809" elapsed="0.002950"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-11-12T02:55:21.359331" level="INFO">Length is 0.</msg>
+<msg time="2025-11-12T02:55:21.359469" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${files}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-11-12T02:55:21.358072" elapsed="0.001507"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2025-11-12T02:55:21.360580" level="FAIL">Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Waiting for file matching ${pattern}...</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2025-11-12T02:55:21.359880" elapsed="0.000803">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="FAIL" start="2025-11-12T02:55:21.353235" elapsed="0.007615">Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<msg time="2025-11-12T02:55:21.360961" level="FAIL">Keyword 'File Should Exist In Folder' failed after retrying for 30 seconds. The last error was: Waiting for file matching DDS_121125_*_27.txt...</msg>
+<arg>30s</arg>
+<arg>1s</arg>
+<arg>File Should Exist In Folder</arg>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2025-11-12T02:54:51.185265" elapsed="30.175836">Keyword 'File Should Exist In Folder' failed after retrying for 30 seconds. The last error was: Waiting for file matching DDS_121125_*_27.txt...</status>
+</kw>
+<kw name="List Files In Directory" owner="OperatingSystem">
+<var>@{files}</var>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<arg>absolute=True</arg>
+<doc>Wrapper for `List Directory` that returns only files.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.361269" elapsed="0.000155"/>
+</kw>
+<kw name="Get Latest File By Modified Time" owner="common">
+<var>${downloaded_file}</var>
+<arg>${downloads_folder}</arg>
+<arg>${pattern}</arg>
+<status status="NOT RUN" start="2025-11-12T02:55:21.361699" elapsed="0.000135"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${filename}</var>
+<arg>os.path.basename(r'${downloaded_file}')</arg>
+<arg>modules=os</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.361960" elapsed="0.000100"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Filename: ${filename}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.362163" elapsed="0.000086"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${filename}</arg>
+<arg>^DDS_\\d{6}_\\d{6}_27\\.txt$</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.362337" elapsed="0.000076"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${filename}</arg>
+<arg>${expected_date}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.362500" elapsed="0.000070"/>
+</kw>
+<kw name="Create Directory" owner="OperatingSystem">
+<arg>${download_dir}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.362647" elapsed="0.000068"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${target_path}</var>
+<arg>${download_dir}${/}${filename}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.362794" elapsed="0.000067"/>
+</kw>
+<kw name="Copy File" owner="OperatingSystem">
+<arg>${downloaded_file}</arg>
+<arg>${target_path}</arg>
+<doc>Copies the source file into the destination.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.362934" elapsed="0.000060"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>✅ Filename pattern verified and file saved: ${target_path}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-11-12T02:55:21.363065" elapsed="0.000058"/>
+</kw>
+<return>
+<value>${target_path}</value>
+<status status="NOT RUN" start="2025-11-12T02:55:21.363166" elapsed="0.000070"/>
+</return>
+<status status="FAIL" start="2025-11-12T02:54:51.181479" elapsed="30.181838">Keyword 'File Should Exist In Folder' failed after retrying for 30 seconds. The last error was: Waiting for file matching DDS_121125_*_27.txt...</status>
 </kw>
 <kw name="Close Browser" owner="Browser" type="TEARDOWN">
-<msg time="2025-11-09T18:31:30.680950" level="INFO">Closed browser</msg>
+<msg time="2025-11-12T02:55:21.504738" level="INFO">Closed browser</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-09T18:31:30.566322" elapsed="0.114753"/>
+<status status="PASS" start="2025-11-12T02:55:21.363709" elapsed="0.141155"/>
 </kw>
-<doc>Create new file : Upload file TBank format
-- CMS001</doc>
+<doc>Create new file : Upload file TBank format - CMS001</doc>
 <tag>happy_case</tag>
 <tag>lab1_happy_case</tag>
-<status status="FAIL" start="2025-11-09T18:30:57.874149" elapsed="32.807112">TimeoutError: elementHandle.waitForElementState: Timeout 30000ms exceeded.
-Call log:
-  - attempting wait for enabled action
-    2 × element is not enabled
-    - retrying wait for enabled action
-    - waiting 20ms
-    2 × element is not enabled
-    - retrying wait for enabled action
-      - waiting 100ms
-    59 × element is not enabled
-     - retrying wait for enabled action
-       - waiting 500ms
-</status>
+<status status="FAIL" start="2025-11-12T02:54:45.562653" elapsed="35.942374">Keyword 'File Should Exist In Folder' failed after retrying for 30 seconds. The last error was: Waiting for file matching DDS_121125_*_27.txt...</status>
 </test>
-<status status="FAIL" start="2025-11-09T18:30:51.872596" elapsed="38.812008"/>
+<status status="FAIL" start="2025-11-12T02:54:40.150205" elapsed="41.358532"/>
 </suite>
 <statistics>
 <total>
@@ -463,7 +1937,7 @@ Call log:
 <stat pass="0" fail="1" skip="0">lab1_happy_case</stat>
 </tag>
 <suite>
-<stat name="Login Test" id="s1" pass="0" fail="1" skip="0">Login Test</stat>
+<stat name="Webconverter Testcase" id="s1" pass="0" fail="1" skip="0">Webconverter Testcase</stat>
 </suite>
 </statistics>
 <errors>
