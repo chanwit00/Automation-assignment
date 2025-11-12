@@ -1,9 +1,6 @@
 *** Settings ***
 Resource    ../../resources/keywords/common.robot
 
-*** Variables ***
-
-
 
 *** Keywords ***
 
@@ -12,7 +9,6 @@ Open Application and Login To CCB
     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
     Create Directory    ${download_dir}
 
-    # ✅ เปิด browser + context ให้รองรับการดาวน์โหลดไฟล์
     New Browser    ${CONFIG}[browser]    headless=${CONFIG}[headless]
     ${context_args}=    Create Dictionary    acceptDownloads=${True}
     New Context    &{context_args}
@@ -35,17 +31,15 @@ Go To Create Payment Import File From Payment
 
 
 Click create new file button
-    Click    ${iframe} >>> //button[normalize-space()='Create new file']
-    Log To Console    ✅ Clicked create new file button
+    Click element when ready    //button[normalize-space()='Create new file']
 
 
 Verify detail in modal default Upload file to edit transaction when click create new file
     ${msg}=    Get Text    ${iframe} >>> //p[contains(text(),'Support only ttb format')]
     ${expected}=    Set Variable    ${CONFIG}[Expected_messages][Upload_file_to_edit_transaction_detail]
     Should Contain    ${msg}    ${expected}
-    Log To Console    ✅ Upload file modal verified
-    Click    ${iframe} >>> //p[normalize-space()='Upload file to edit transaction']
-    Click    ${iframe} >>> //button[normalize-space()='Confirm']
+    Click element when ready    //p[normalize-space()='Upload file to edit transaction']
+    Click element when ready    //button[normalize-space()='Confirm']
 
 
 Verify Upload payment file page should be display correctly
@@ -62,7 +56,6 @@ Upload File To Drop Zone
     File Should Exist    ${file_path}
     Upload File By Selector    ${iframe} >>> //input[@type='file']    ${file_path}
     Wait For Elements State    ${iframe} >>> //button[normalize-space()='Next']    enabled    ${CONFIG}[timeouts][element_wait]
-    Log To Console    ✅ File uploaded: ${filename}
 
 
 Verify file uploaded successfully
@@ -70,25 +63,21 @@ Verify file uploaded successfully
     ${msg}=    Get Text    ${iframe} >>> //p[text()='File Uploaded Successfully']
     ${expected}=    Set Variable    ${CONFIG}[Expected_messages][Upload_payment_file_success]
     Should Contain    ${msg}    ${expected}
-    Log To Console    ✅ File upload success verified
 
 
 Verify file name should be display correctly
     [Arguments]    ${filename}
     ${displayed_filename}=    Get Text    ${iframe} >>> //p[text()='${filename}']
     Should Be Equal As Strings    ${displayed_filename}    ${filename}
-    Log To Console    ✅ File name displayed correctly: ${filename}
 
 
 Click next button on create payment import file page
-    Wait For Elements State    ${iframe} >>> //button[normalize-space()='Next']    enabled    ${CONFIG}[timeouts][element_wait]
-    Click    ${iframe} >>> //button[normalize-space()='Next']
+    Click element when ready    //button[normalize-space()='Next']
 
 
 Input Tax ID
     Wait For Elements State    ${iframe} >>> //input[@data-testid="textfield__tax_id"]    visible    ${CONFIG}[timeouts][element_wait]
     Fill Text    ${iframe} >>> //input[@data-testid="textfield__tax_id"]    ${CONFIG}[Tax ID]
-    Log To Console    ✅ Input Tax ID: ${CONFIG}[Tax ID]
 
 
 Verify Payment Type Options with:
@@ -99,7 +88,6 @@ Verify Payment Type Options with:
     ${actual_count}=    Get Element Count    ${iframe} >>> select[data-testid="dropdown-testid-payment_type"] >> option[value]:not([value=""])
     ${expected_count}=    Get Length    ${expected_options}
     Should Be Equal As Numbers    ${actual_count}    ${expected_count}
-    Log To Console    ✅ Payment type options verified: ${expected_options}
 
 
 Input information for create new file with payment type: '${payment_type}' with debit account: '${debit_account}' and with date: '${current_date}'
@@ -111,13 +99,10 @@ Input information for create new file with payment type: '${payment_type}' with 
     Fill Text    ${iframe} >>> //label[text()="Effective Date"]/following-sibling::input    ${current_date}
     Press Keys    ${iframe} >>> //label[text()="Effective Date"]/following-sibling::input    Enter
     Check And Fill Company Address
-    Log To Console    ✅ Fill information completed successfully
 
 
 Click confirm button
-    Wait For Elements State    ${iframe} >>> //button[normalize-space()='Confirm']    enabled    ${CONFIG}[timeouts][element_wait]
-    Click    ${iframe} >>> //button[normalize-space()='Confirm']
-    Log To Console    ✅ Clicked confirm button
+    Click element when ready    //button[normalize-space()='Confirm']
 
 
 Verify File summary should be display correctly with file details:
@@ -127,55 +112,35 @@ Verify File summary should be display correctly with file details:
     ${ui_effective_date}=      Get Text    ${iframe} >>> //div[contains(@class,'css-v0elue')]//p[normalize-space()='Effective Date']/following-sibling::p
     ${ui_transaction_count}=   Get Text    ${iframe} >>> //div[contains(@class,'css-v0elue')]//p[normalize-space()='Transaction(s)']/following-sibling::p
     ${ui_total_amount}=        Get Text    ${iframe} >>> //div[contains(@class,'css-v0elue')]//p[normalize-space()='Total amount']/following-sibling::p
-
     Should Be Equal As Strings    ${ui_payment_type}       ${expected_data}[Payment_Type]
     Should Be Equal As Strings    ${ui_effective_date}     ${expected_data}[Effective_Date]
     Should Be Equal As Strings    ${ui_transaction_count}  ${expected_data}[Transaction_Count]
     Should Contain               ${ui_total_amount}       ${expected_data}[Total_Amount]
-    Log To Console    ✅ File summary verified successfully
 
 
 Click Generate File Button And Wait For Download Validate Downloaded and should be download successful File name:
     [Arguments]    ${filename}
-    # ${expected_date}=    Get Current Date    result_format=%d%m%y
-    # ${current_time}=     Get Current Date    result_format=%H%M%S
-    ${download_dir}=     Set Variable    ${EXECDIR}${/}downloads
-    Create Directory     ${download_dir}
-
-    # ${filename}=    Set Variable    DDS_${expected_date}_${current_time}_27.txt
-    ${target_path}=  Set Variable    ${download_dir}${/}${filename}
-
-    Click    ${iframe} >>> //footer/button[normalize-space()='Generate file']
-    Sleep    10s    # Wait for download to start
-    # Log To Console    ✅ Clicked Generate file button
-    # Log To Console    🚀 Start generating and downloading: ${filename}
-
-    ${downloaded}=    Download
-    ...    url=https://ccbuat.tau2904.com/api/accounts/v1/balances/changes
-    ...    saveAs=${target_path}
-    ...    wait_for_finished=True
-    ...    download_timeout=30s
-
-    # File Should Exist    ${target_path}
-    # Log To Console    ✅ File downloaded successfully: ${target_path}
-
-    # RETURN    ${target_path}
+    ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
+    Create Directory    ${download_dir}
+    ${target_path}=    Set Variable    ${download_dir}${/}${filename}
+    ${download_promise}=    Promise To Wait For Download    saveAs=${target_path}
+    Click element when ready    //footer/button[normalize-space()='Generate file']
+    ${download_info}=    Wait For    ${download_promise}      
+    File Should Exist    ${target_path}
+       
+    
+Verify generate file toast message should be display correctly with '27' records
+    Wait For Elements State    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    visible    ${CONFIG}[timeouts][element_wait]
+    ${tost}=    Get Text    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    should be    ${CONFIG}[Expected_messages][Generate_file_success]
 
 
-# Verify generate file toast message should be display correctly with '27' records
-#     Wait For Elements State    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    visible    ${CONFIG}[timeouts][element_wait]
-#     ${tost}=    Get Text    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    should be    ${CONFIG}[Expected_messages][Generate_file_success]
-#     Log To Console    ✅ Generate file success toast message verified: ${tost}
-#     Take Screenshot
+Verify file should be exist and file name:
+    [Arguments]    ${filename}
+    ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
+    ${target_path}=    Set Variable    ${download_dir}${/}${filename}
+    File Should Exist    ${target_path}
 
 
-# Verify file should be exist and file name:
-#     [Arguments]    ${filename}
-#     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
-#     ${target_path}=    Set Variable    ${download_dir}${/}${filename}
-#     File Should Exist    ${target_path}
-#     Log To Console    ✅ Verified file exists with name: ${filename}
-
-
-# Delete Downloaded Files
-#     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
+Delete Downloaded Files
+    ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
+    Remove Directory    ${download_dir}    recursive=${True}

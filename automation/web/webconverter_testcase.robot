@@ -1,12 +1,8 @@
 *** Settings ***
 Resource    ../../resources/keywords/webcon_keywords.robot
-Resource    ../../resources/keywords/common.robot
 
 Suite Setup    Open Application and Login To CCB
-# Test Teardown  Delete Downloaded Files
-
-*** Variables ***
-
+Test Teardown  Delete Downloaded Files
 
 
 *** Test Cases ***
@@ -25,7 +21,7 @@ TS001_TC007: Create new file : Upload file TBank format - CMS001
     Input Tax ID
     ${expected_payment_types}=    Create List    DCS    DDS    PAY
     Verify Payment Type Options with:    ${expected_payment_types}
-    ${transaction_data.debit_account}=    Set Variable    612 1 00882 2
+    ${transaction_data.debit_account}=    Set Variable    ${CONFIG}[debit_account]
     ${current_date}=    Get Current Date    result_format=%d-%m-%Y
     Input information for create new file with payment type: 'DDS' with debit account: '${transaction_data.debit_account}' and with date: '${current_date}'
     Click Confirm Button
@@ -35,6 +31,5 @@ TS001_TC007: Create new file : Upload file TBank format - CMS001
     ${current_time}=     Get Current Date    result_format=%H%M%S
     # Click button with locator: '//footer/button[text()="Generate file"]' with: filename: DDS_${current_date_abbreviated_year}_${current_time}_27.txt should be download successful
     Click Generate File Button And Wait For Download Validate Downloaded and should be download successful File name:   DDS_${current_date_abbreviated_year}_${current_time}_27.txt
-    # ...      DDS_${current_date_abbreviated_year}_${current_time}_27.txt
-    # Verify generate file toast message should be display correctly with '27' records   
-    # Verify file should be exist and file name:  DDS_${current_date_abbreviated_year}_${current_time}_27.txt
+    Verify generate file toast message should be display correctly with '27' records   
+    Verify file should be exist and file name:  DDS_${current_date_abbreviated_year}_${current_time}_27.txt

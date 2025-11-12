@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-11-13T00:16:18.269546" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-11-13T02:02:16.676424" rpa="false" schemaversion="5">
 <suite id="s1" name="Webconverter Testcase" source="C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\automation\web\webconverter_testcase.robot">
 <kw name="Open Application and Login To CCB" owner="webcon_keywords" type="SETUP">
 <kw name="Load Config" owner="common">
 <kw name="Load Yaml" owner="yaml_loader">
-<msg time="2025-11-13T00:16:18.432696" level="INFO">${DATA} = {'environment': 'uat', 'url': 'https://ccbuat.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'Kamuat', 'password': '446825zaZ.'}, 'timeouts': {'element_wait...</msg>
+<msg time="2025-11-13T02:02:16.836666" level="INFO">${DATA} = {'environment': 'uat', 'url': 'https://ccbuat.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'Kamuat', 'password': '446825zaZ.'}, 'timeouts': {'element_wait...</msg>
 <var>${DATA}</var>
 <arg>${EXECDIR}/config/settings.yaml</arg>
-<status status="PASS" start="2025-11-13T00:16:18.431270" elapsed="0.001462"/>
+<status status="PASS" start="2025-11-13T02:02:16.835219" elapsed="0.001485"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:18.433088" level="INFO">${CONFIG} = {'environment': 'uat', 'url': 'https://ccbuat.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'Kamuat', 'password': '446825zaZ.'}, 'timeouts': {'element_wait...</msg>
+<msg time="2025-11-13T02:02:16.837067" level="INFO">${CONFIG} = {'environment': 'uat', 'url': 'https://ccbuat.tau2904.com/auth/login', 'browser': 'chromium', 'headless': False, 'CCBUSER': {'username': 'Kamuat', 'password': '446825zaZ.'}, 'timeouts': {'element_wait...</msg>
 <arg>${CONFIG}</arg>
 <arg>${DATA}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-11-13T00:16:18.432858" elapsed="0.000268"/>
+<status status="PASS" start="2025-11-13T02:02:16.836836" elapsed="0.000271"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>&gt;&gt;&gt; CONFIG LOADED</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:18.433220" elapsed="0.000236"/>
+<status status="PASS" start="2025-11-13T02:02:16.837201" elapsed="0.000233"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:18.430714" elapsed="0.002799"/>
+<status status="PASS" start="2025-11-13T02:02:16.834718" elapsed="0.002789"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:18.433780" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
+<msg time="2025-11-13T02:02:16.837820" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
 <var>${download_dir}</var>
 <arg>${EXECDIR}${/}downloads</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:18.433588" elapsed="0.000213"/>
+<status status="PASS" start="2025-11-13T02:02:16.837593" elapsed="0.000250"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-11-13T00:16:18.434048" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads&lt;/a&gt;' already exists.</msg>
+<msg time="2025-11-13T02:02:16.838272" level="INFO" html="true">Created directory '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads&lt;/a&gt;'.</msg>
 <arg>${download_dir}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-11-13T00:16:18.433877" elapsed="0.000209"/>
+<status status="PASS" start="2025-11-13T02:02:16.837928" elapsed="0.000395"/>
 </kw>
 <kw name="New Browser" owner="Browser">
-<msg time="2025-11-13T00:16:18.434683" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\4148f5cc-f92e-42ba-b004-1ca266b4d9b1"}</msg>
-<msg time="2025-11-13T00:16:18.446731" level="INFO">Starting Browser process C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:59868</msg>
-<msg time="2025-11-13T00:16:19.088679" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\4148f5cc-f92e-42ba-b004-1ca266b4d9b1"}</msg>
+<msg time="2025-11-13T02:02:16.838978" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\1ec94afa-2e6f-4cde-81be-b76ac853fa6d"}</msg>
+<msg time="2025-11-13T02:02:16.851496" level="INFO">Starting Browser process C:\Users\Grxxn\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:49896</msg>
+<msg time="2025-11-13T02:02:17.493629" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\reports\\browser\\traces\\temp\\1ec94afa-2e6f-4cde-81be-b76ac853fa6d"}</msg>
 <arg>${CONFIG}[browser]</arg>
 <arg>headless=${CONFIG}[headless]</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-11-13T00:16:18.434168" elapsed="0.654645"/>
+<status status="PASS" start="2025-11-13T02:02:16.838417" elapsed="0.655355"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-11-13T00:16:19.089387" level="INFO">${context_args} = {'acceptDownloads': True}</msg>
+<msg time="2025-11-13T02:02:17.494364" level="INFO">${context_args} = {'acceptDownloads': True}</msg>
 <var>${context_args}</var>
 <arg>acceptDownloads=${True}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-11-13T00:16:19.088992" elapsed="0.000428"/>
+<status status="PASS" start="2025-11-13T02:02:17.493981" elapsed="0.000411"/>
 </kw>
 <kw name="New Context" owner="Browser">
-<msg time="2025-11-13T00:16:19.090516" level="INFO">{
+<msg time="2025-11-13T02:02:17.495584" level="INFO">{
   "acceptDownloads": true,
   "bypassCSP": false,
   "forcedColors": "none",
@@ -69,250 +69,282 @@
     "height": 720
   }
 }</msg>
-<msg time="2025-11-13T00:16:19.101311" level="INFO">Successfully created context. </msg>
-<msg time="2025-11-13T00:16:19.101379" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2025-11-13T02:02:17.506437" level="INFO">Successfully created context. </msg>
+<msg time="2025-11-13T02:02:17.506503" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
 <arg>&amp;{context_args}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new BrowserContext with specified options.</doc>
-<status status="PASS" start="2025-11-13T00:16:19.089546" elapsed="0.011891"/>
+<status status="PASS" start="2025-11-13T02:02:17.494528" elapsed="0.012032"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2025-11-13T00:16:19.764178" level="INFO">Successfully initialized new page object and opened url: https://ccbuat.tau2904.com/auth/login</msg>
-<msg time="2025-11-13T00:16:19.764425" level="INFO">${PAGE} = {'page_id': 'page=412872a4-3fe0-44d3-bd34-42db55c751c0', 'video_path': ''}</msg>
+<msg time="2025-11-13T02:02:18.023516" level="INFO">Successfully initialized new page object and opened url: https://ccbuat.tau2904.com/auth/login</msg>
+<msg time="2025-11-13T02:02:18.023708" level="INFO">${PAGE} = {'page_id': 'page=d34acefb-2d80-4142-9761-650339402d87', 'video_path': ''}</msg>
 <var>${PAGE}</var>
 <arg>${CONFIG}[url]</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-11-13T00:16:19.101591" elapsed="0.662864"/>
+<status status="PASS" start="2025-11-13T02:02:17.506712" elapsed="0.517022"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:19.764946" level="INFO">${PAGE} = {'page_id': 'page=412872a4-3fe0-44d3-bd34-42db55c751c0', 'video_path': ''}</msg>
+<msg time="2025-11-13T02:02:18.024246" level="INFO">${PAGE} = {'page_id': 'page=d34acefb-2d80-4142-9761-650339402d87', 'video_path': ''}</msg>
 <arg>${PAGE}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-11-13T00:16:19.764628" elapsed="0.000354"/>
+<status status="PASS" start="2025-11-13T02:02:18.023891" elapsed="0.000420"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:19.786556" level="INFO">Waited for Element with selector //input[@type='text'] at state visible</msg>
+<msg time="2025-11-13T02:02:18.047210" level="INFO">Waited for Element with selector //input[@type='text'] at state visible</msg>
 <arg>//input[@type='text']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:19.765093" elapsed="0.021593"/>
+<status status="PASS" start="2025-11-13T02:02:18.024436" elapsed="0.022971"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-11-13T00:16:19.787412" level="INFO">Fills the text 'Kamuat' in the given field.</msg>
+<msg time="2025-11-13T02:02:18.048177" level="INFO">Fills the text 'Kamuat' in the given field.</msg>
 <arg>//input[@type='text']</arg>
 <arg>${CONFIG}[CCBUSER][username]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:19.786846" elapsed="0.014492"/>
+<status status="PASS" start="2025-11-13T02:02:18.047630" elapsed="0.013979"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:19.801979" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
+<msg time="2025-11-13T02:02:18.062339" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
 <arg>//button[normalize-space()='Next']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:19.801508" elapsed="0.848375"/>
+<status status="PASS" start="2025-11-13T02:02:18.061801" elapsed="0.858685"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-11-13T00:16:20.650586" level="INFO">Fills the text '446825zaZ.' in the given field.</msg>
+<msg time="2025-11-13T02:02:18.921154" level="INFO">Fills the text '446825zaZ.' in the given field.</msg>
 <arg>//input[@type='password']</arg>
 <arg>${CONFIG}[CCBUSER][password]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:20.650058" elapsed="0.202070"/>
+<status status="PASS" start="2025-11-13T02:02:18.920659" elapsed="0.211932"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:20.852751" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
+<msg time="2025-11-13T02:02:19.133250" level="INFO">Clicks the element '//button[normalize-space()='Next']'.</msg>
 <arg>//button[normalize-space()='Next']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:20.852305" elapsed="0.022932"/>
+<status status="PASS" start="2025-11-13T02:02:19.132764" elapsed="0.025537"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:27.983802" level="INFO">Waited for Element with selector //ca-dashboard-widget[@id='DashboardFinancialSummaryComponent'] at state visible</msg>
+<msg time="2025-11-13T02:02:22.603742" level="INFO">Waited for Element with selector //ca-dashboard-widget[@id='DashboardFinancialSummaryComponent'] at state visible</msg>
 <arg>//ca-dashboard-widget[@id='DashboardFinancialSummaryComponent']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:20.875415" elapsed="7.108509"/>
+<status status="PASS" start="2025-11-13T02:02:19.158594" elapsed="3.445271"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:18.430405" elapsed="9.553611"/>
+<status status="PASS" start="2025-11-13T02:02:16.834417" elapsed="5.769548"/>
 </kw>
-<test id="s1-t1" name="TS001_TC007: Create new file : Upload file TBank format - CMS001" line="13">
+<test id="s1-t1" name="TS001_TC007: Create new file : Upload file TBank format - CMS001" line="9">
 <kw name="Go To Create Payment Import File From Payment" owner="webcon_keywords">
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:27.989165" level="INFO">Clicks the element '//span[normalize-space()='Payment']'.</msg>
+<msg time="2025-11-13T02:02:22.608215" level="INFO">Clicks the element '//span[normalize-space()='Payment']'.</msg>
 <arg>//span[normalize-space()='Payment']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:27.988778" elapsed="0.869296"/>
+<status status="PASS" start="2025-11-13T02:02:22.607832" elapsed="1.400455"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:28.864108" level="INFO">Waited for Element with selector //span[normalize-space()='Create Payment Import File'] at state visible</msg>
+<msg time="2025-11-13T02:02:24.014670" level="INFO">Waited for Element with selector //span[normalize-space()='Create Payment Import File'] at state visible</msg>
 <arg>//span[normalize-space()='Create Payment Import File']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:28.858263" elapsed="0.005970"/>
+<status status="PASS" start="2025-11-13T02:02:24.008467" elapsed="0.006326"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:28.864852" level="INFO">Clicks the element '//span[normalize-space()='Create Payment Import File']'.</msg>
+<msg time="2025-11-13T02:02:24.015406" level="INFO">Clicks the element '//span[normalize-space()='Create Payment Import File']'.</msg>
 <arg>//span[normalize-space()='Create Payment Import File']</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:28.864387" elapsed="0.044405"/>
+<status status="PASS" start="2025-11-13T02:02:24.014945" elapsed="0.031597"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:29.162414" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')] at state visible</msg>
+<msg time="2025-11-13T02:02:24.267620" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')] at state visible</msg>
 <arg>${iframe} &gt;&gt;&gt; //p[contains(text(),'For Thanachart iBiz customer')]</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:28.909081" elapsed="0.253456"/>
+<status status="PASS" start="2025-11-13T02:02:24.046793" elapsed="0.220951"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:27.988378" elapsed="1.174252"/>
+<status status="PASS" start="2025-11-13T02:02:22.607452" elapsed="1.660385"/>
 </kw>
 <kw name="Click create new file button" owner="webcon_keywords">
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-13T02:02:24.273005" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-13T02:02:24.268760" elapsed="0.004345"/>
+</kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:29.163648" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']'.</msg>
-<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Create new file']</arg>
+<msg time="2025-11-13T02:02:24.273681" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Create new file']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:29.163228" elapsed="0.883896"/>
+<status status="PASS" start="2025-11-13T02:02:24.273238" elapsed="0.860299"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Clicked create new file button</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.047297" elapsed="0.000426"/>
+<arg>//button[normalize-space()='Create new file']</arg>
+<status status="PASS" start="2025-11-13T02:02:24.268489" elapsed="0.865150"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:29.162864" elapsed="0.884945"/>
+<status status="PASS" start="2025-11-13T02:02:24.268104" elapsed="0.865577"/>
 </kw>
 <kw name="Verify detail in modal default Upload file to edit transaction when click create new file" owner="webcon_keywords">
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:30.065613" level="INFO">Text: 'Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format'</msg>
-<msg time="2025-11-13T00:16:30.065731" level="INFO">${msg} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
+<msg time="2025-11-13T02:02:25.153772" level="INFO">Text: 'Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format'</msg>
+<msg time="2025-11-13T02:02:25.153891" level="INFO">${msg} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
 <var>${msg}</var>
 <arg>${iframe} &gt;&gt;&gt; //p[contains(text(),'Support only ttb format')]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.048310" elapsed="0.017441"/>
+<status status="PASS" start="2025-11-13T02:02:25.134284" elapsed="0.019628"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:30.066206" level="INFO">${expected} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
+<msg time="2025-11-13T02:02:25.154360" level="INFO">${expected} = Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format</msg>
 <var>${expected}</var>
 <arg>${CONFIG}[Expected_messages][Upload_file_to_edit_transaction_detail]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.065896" elapsed="0.000334"/>
+<status status="PASS" start="2025-11-13T02:02:25.154054" elapsed="0.000330"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${msg}</arg>
 <arg>${expected}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.066330" elapsed="0.000198"/>
+<status status="PASS" start="2025-11-13T02:02:25.154482" elapsed="0.000182"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Upload file modal verified</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.066611" elapsed="0.000262"/>
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-13T02:02:25.159628" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-13T02:02:25.155012" elapsed="0.004732"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:30.067438" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']'.</msg>
-<arg>${iframe} &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']</arg>
+<msg time="2025-11-13T02:02:25.160370" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload file to edit transaction']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.066992" elapsed="0.025843"/>
+<status status="PASS" start="2025-11-13T02:02:25.159897" elapsed="0.021180"/>
+</kw>
+<arg>//p[normalize-space()='Upload file to edit transaction']</arg>
+<status status="PASS" start="2025-11-13T02:02:25.154769" elapsed="0.026411"/>
+</kw>
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-13T02:02:25.186622" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-13T02:02:25.181695" elapsed="0.005045"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:30.093510" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
-<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
+<msg time="2025-11-13T02:02:25.187374" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.093002" elapsed="0.036081"/>
+<status status="PASS" start="2025-11-13T02:02:25.186891" elapsed="0.028446"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:30.048010" elapsed="0.081181"/>
+<arg>//button[normalize-space()='Confirm']</arg>
+<status status="PASS" start="2025-11-13T02:02:25.181312" elapsed="0.034135"/>
+</kw>
+<status status="PASS" start="2025-11-13T02:02:25.133921" elapsed="0.081567"/>
 </kw>
 <kw name="Verify Upload payment file page should be display correctly" owner="webcon_keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:30.135861" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload payment file'] at state visible</msg>
+<msg time="2025-11-13T02:02:25.223496" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='Upload payment file'] at state visible</msg>
 <arg>${iframe} &gt;&gt;&gt; //p[normalize-space()='Upload payment file']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.130107" elapsed="0.005877"/>
+<status status="PASS" start="2025-11-13T02:02:25.216254" elapsed="0.007370"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:30.147134" level="INFO">Text: 'You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The system supports uploading ttb format (SAPFORMAT and SAPFORMAT NEW) and TBank format (CMS001, CMS002, CMS005, CMS030, MCS001 and MCS003)'</msg>
-<msg time="2025-11-13T00:16:30.147264" level="INFO">${msg} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
+<msg time="2025-11-13T02:02:25.232732" level="INFO">Text: 'You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The system supports uploading ttb format (SAPFORMAT and SAPFORMAT NEW) and TBank format (CMS001, CMS002, CMS005, CMS030, MCS001 and MCS003)'</msg>
+<msg time="2025-11-13T02:02:25.232849" level="INFO">${msg} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
 <var>${msg}</var>
 <arg>${iframe} &gt;&gt;&gt; //p[contains(text(),'You can edit detail in existing file')]</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.136143" elapsed="0.011220"/>
+<status status="PASS" start="2025-11-13T02:02:25.223786" elapsed="0.009086"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:30.147809" level="INFO">${expected} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
+<msg time="2025-11-13T02:02:25.233324" level="INFO">${expected} = You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The ...</msg>
 <var>${expected}</var>
 <arg>${CONFIG}[Expected_messages][Upload_payment_file_detail]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.147515" elapsed="0.000319"/>
+<status status="PASS" start="2025-11-13T02:02:25.233019" elapsed="0.000331"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${msg}</arg>
 <arg>${expected}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.147937" elapsed="0.000191"/>
+<status status="PASS" start="2025-11-13T02:02:25.233458" elapsed="0.000187"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:30.153321" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@data-testid='dropbox-testid'] at state visible</msg>
+<msg time="2025-11-13T02:02:25.238260" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@data-testid='dropbox-testid'] at state visible</msg>
 <arg>${iframe} &gt;&gt;&gt; //div[@data-testid='dropbox-testid']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.148215" elapsed="0.005223"/>
+<status status="PASS" start="2025-11-13T02:02:25.233735" elapsed="0.004645"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:30.129525" elapsed="0.023999"/>
+<status status="PASS" start="2025-11-13T02:02:25.215814" elapsed="0.022661"/>
 </kw>
 <kw name="Upload File To Drop Zone" owner="webcon_keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:30.154418" level="INFO">${file_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\keywords\..\..\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt</msg>
+<msg time="2025-11-13T02:02:25.239385" level="INFO">${file_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\keywords\..\..\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt</msg>
 <var>${file_path}</var>
 <arg>C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\resources\\keywords${/}..${/}..${/}resources${/}testdata${/}common${/}Web_Converter${/}${filename}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.154147" elapsed="0.000293"/>
+<status status="PASS" start="2025-11-13T02:02:25.239100" elapsed="0.000311"/>
 </kw>
 <kw name="File Should Exist" owner="OperatingSystem">
-<msg time="2025-11-13T00:16:30.154748" level="INFO" html="true">File '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt&lt;/a&gt;' exists.</msg>
+<msg time="2025-11-13T02:02:25.239716" level="INFO" html="true">File '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\resources\testdata\common\Web_Converter\CONVERT_CMS001.txt&lt;/a&gt;' exists.</msg>
 <arg>${file_path}</arg>
 <doc>Fails unless the given ``path`` points to an existing file.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.154526" elapsed="0.000261"/>
+<status status="PASS" start="2025-11-13T02:02:25.239499" elapsed="0.000258"/>
 </kw>
 <kw name="Upload File By Selector" owner="Browser">
 <arg>${iframe} &gt;&gt;&gt; //input[@type='file']</arg>
@@ -320,242 +352,221 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Uploads file from ``path`` to file input element matched by selector.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.154873" elapsed="0.013799"/>
+<status status="PASS" start="2025-11-13T02:02:25.239844" elapsed="0.014577"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:30.309178" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state enabled</msg>
+<msg time="2025-11-13T02:02:25.496657" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state enabled</msg>
 <arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
 <arg>enabled</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.168852" elapsed="0.140453"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ File uploaded: ${filename}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.309461" elapsed="0.000433"/>
+<status status="PASS" start="2025-11-13T02:02:25.254604" elapsed="0.242178"/>
 </kw>
 <arg>CONVERT_CMS001.txt</arg>
-<status status="PASS" start="2025-11-13T00:16:30.153777" elapsed="0.156187"/>
+<status status="PASS" start="2025-11-13T02:02:25.238727" elapsed="0.258150"/>
 </kw>
 <kw name="Verify file uploaded successfully" owner="webcon_keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:30.315418" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[text()='File Uploaded Successfully'] at state visible</msg>
+<msg time="2025-11-13T02:02:25.502284" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[text()='File Uploaded Successfully'] at state visible</msg>
 <arg>${iframe} &gt;&gt;&gt; //p[text()='File Uploaded Successfully']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.310404" elapsed="0.005130"/>
+<status status="PASS" start="2025-11-13T02:02:25.497597" elapsed="0.004789"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:30.324781" level="INFO">Text: 'File Uploaded Successfully'</msg>
-<msg time="2025-11-13T00:16:30.324903" level="INFO">${msg} = File Uploaded Successfully</msg>
+<msg time="2025-11-13T02:02:25.511106" level="INFO">Text: 'File Uploaded Successfully'</msg>
+<msg time="2025-11-13T02:02:25.511218" level="INFO">${msg} = File Uploaded Successfully</msg>
 <var>${msg}</var>
 <arg>${iframe} &gt;&gt;&gt; //p[text()='File Uploaded Successfully']</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.315681" elapsed="0.009243"/>
+<status status="PASS" start="2025-11-13T02:02:25.502530" elapsed="0.008707"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:30.325388" level="INFO">${expected} = File Uploaded Successfully</msg>
+<msg time="2025-11-13T02:02:25.511690" level="INFO">${expected} = File Uploaded Successfully</msg>
 <var>${expected}</var>
 <arg>${CONFIG}[Expected_messages][Upload_payment_file_success]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.325074" elapsed="0.000338"/>
+<status status="PASS" start="2025-11-13T02:02:25.511385" elapsed="0.000330"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${msg}</arg>
 <arg>${expected}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.325511" elapsed="0.000179"/>
+<status status="PASS" start="2025-11-13T02:02:25.511816" elapsed="0.000185"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ File upload success verified</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.325772" elapsed="0.000259"/>
-</kw>
-<status status="PASS" start="2025-11-13T00:16:30.310129" elapsed="0.015982"/>
+<status status="PASS" start="2025-11-13T02:02:25.497114" elapsed="0.014943"/>
 </kw>
 <kw name="Verify file name should be display correctly" owner="webcon_keywords">
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:30.337591" level="INFO">Text: 'CONVERT_CMS001.txt'</msg>
-<msg time="2025-11-13T00:16:30.337713" level="INFO">${displayed_filename} = CONVERT_CMS001.txt</msg>
+<msg time="2025-11-13T02:02:25.521849" level="INFO">Text: 'CONVERT_CMS001.txt'</msg>
+<msg time="2025-11-13T02:02:25.521967" level="INFO">${displayed_filename} = CONVERT_CMS001.txt</msg>
 <var>${displayed_filename}</var>
 <arg>${iframe} &gt;&gt;&gt; //p[text()='${filename}']</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.326592" elapsed="0.011142"/>
+<status status="PASS" start="2025-11-13T02:02:25.512631" elapsed="0.009357"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${displayed_filename}</arg>
 <arg>${filename}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.337896" elapsed="0.000361"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ File name displayed correctly: ${filename}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.338362" elapsed="0.000311"/>
+<status status="PASS" start="2025-11-13T02:02:25.522130" elapsed="0.000328"/>
 </kw>
 <arg>CONVERT_CMS001.txt</arg>
-<status status="PASS" start="2025-11-13T00:16:30.326291" elapsed="0.012483"/>
+<status status="PASS" start="2025-11-13T02:02:25.512276" elapsed="0.010248"/>
 </kw>
 <kw name="Click next button on create payment import file page" owner="webcon_keywords">
+<kw name="Click element when ready" owner="common">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:30.347764" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state enabled</msg>
-<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
-<arg>enabled</arg>
+<msg time="2025-11-13T02:02:25.528055" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.339420" elapsed="0.008507"/>
+<status status="PASS" start="2025-11-13T02:02:25.523320" elapsed="0.004886"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:30.348586" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next']'.</msg>
-<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Next']</arg>
+<msg time="2025-11-13T02:02:25.528878" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Next']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.348077" elapsed="0.048625"/>
+<status status="PASS" start="2025-11-13T02:02:25.528369" elapsed="0.045645"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:30.339025" elapsed="0.057784"/>
+<arg>//button[normalize-space()='Next']</arg>
+<status status="PASS" start="2025-11-13T02:02:25.523063" elapsed="0.051061"/>
+</kw>
+<status status="PASS" start="2025-11-13T02:02:25.522763" elapsed="0.051403"/>
 </kw>
 <kw name="Input Tax ID" owner="webcon_keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:30.401690" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //input[@data-testid="textfield__tax_id"] at state visible</msg>
+<msg time="2025-11-13T02:02:25.579684" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //input[@data-testid="textfield__tax_id"] at state visible</msg>
 <arg>${iframe} &gt;&gt;&gt; //input[@data-testid="textfield__tax_id"]</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.397410" elapsed="0.004415"/>
+<status status="PASS" start="2025-11-13T02:02:25.574936" elapsed="0.004867"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-11-13T00:16:30.402531" level="INFO">Fills the text '7740207838471' in the given field.</msg>
+<msg time="2025-11-13T02:02:25.580475" level="INFO">Fills the text '7740207838471' in the given field.</msg>
 <arg>${iframe} &gt;&gt;&gt; //input[@data-testid="textfield__tax_id"]</arg>
 <arg>${CONFIG}[Tax ID]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.401985" elapsed="0.007549"/>
+<status status="PASS" start="2025-11-13T02:02:25.579972" elapsed="0.007074"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Input Tax ID: ${CONFIG}[Tax ID]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.409712" elapsed="0.000519"/>
-</kw>
-<status status="PASS" start="2025-11-13T00:16:30.397039" elapsed="0.013317"/>
+<status status="PASS" start="2025-11-13T02:02:25.574456" elapsed="0.012702"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-11-13T00:16:30.410956" level="INFO">${expected_payment_types} = ['DCS', 'DDS', 'PAY']</msg>
+<msg time="2025-11-13T02:02:25.587867" level="INFO">${expected_payment_types} = ['DCS', 'DDS', 'PAY']</msg>
 <var>${expected_payment_types}</var>
 <arg>DCS</arg>
 <arg>DDS</arg>
 <arg>PAY</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-11-13T00:16:30.410665" elapsed="0.000318"/>
+<status status="PASS" start="2025-11-13T02:02:25.587491" elapsed="0.000406"/>
 </kw>
 <kw name="Verify Payment Type Options with:" owner="webcon_keywords">
 <for flavor="IN">
 <iter>
 <kw name="Get Element" owner="Browser">
-<msg time="2025-11-13T00:16:31.753856" level="INFO">Locator found successfully.</msg>
+<msg time="2025-11-13T02:02:25.900345" level="INFO">Locator found successfully.</msg>
 <arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value="${value}"]</arg>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
-<status status="PASS" start="2025-11-13T00:16:30.411863" elapsed="1.342173"/>
+<status status="PASS" start="2025-11-13T02:02:25.588780" elapsed="0.311698"/>
 </kw>
 <var name="${value}">DCS</var>
-<status status="PASS" start="2025-11-13T00:16:30.411717" elapsed="1.342420"/>
+<status status="PASS" start="2025-11-13T02:02:25.588627" elapsed="0.311920"/>
 </iter>
 <iter>
 <kw name="Get Element" owner="Browser">
-<msg time="2025-11-13T00:16:31.768688" level="INFO">Locator found successfully.</msg>
+<msg time="2025-11-13T02:02:25.904967" level="INFO">Locator found successfully.</msg>
 <arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value="${value}"]</arg>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
-<status status="PASS" start="2025-11-13T00:16:31.755203" elapsed="0.013616"/>
+<status status="PASS" start="2025-11-13T02:02:25.900939" elapsed="0.004131"/>
 </kw>
 <var name="${value}">DDS</var>
-<status status="PASS" start="2025-11-13T00:16:31.754580" elapsed="0.014302"/>
+<status status="PASS" start="2025-11-13T02:02:25.900675" elapsed="0.004452"/>
 </iter>
 <iter>
 <kw name="Get Element" owner="Browser">
-<msg time="2025-11-13T00:16:31.773660" level="INFO">Locator found successfully.</msg>
+<msg time="2025-11-13T02:02:25.910267" level="INFO">Locator found successfully.</msg>
 <arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value="${value}"]</arg>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
-<status status="PASS" start="2025-11-13T00:16:31.769235" elapsed="0.004530"/>
+<status status="PASS" start="2025-11-13T02:02:25.905413" elapsed="0.004997"/>
 </kw>
 <var name="${value}">PAY</var>
-<status status="PASS" start="2025-11-13T00:16:31.768996" elapsed="0.004829"/>
+<status status="PASS" start="2025-11-13T02:02:25.905224" elapsed="0.005259"/>
 </iter>
 <var>${value}</var>
 <value>@{expected_options}</value>
-<status status="PASS" start="2025-11-13T00:16:30.411529" elapsed="1.362336"/>
+<status status="PASS" start="2025-11-13T02:02:25.588430" elapsed="0.322097"/>
 </for>
 <kw name="Get Element Count" owner="Browser">
-<msg time="2025-11-13T00:16:31.780005" level="INFO">${actual_count} = 3</msg>
+<msg time="2025-11-13T02:02:25.916277" level="INFO">${actual_count} = 3</msg>
 <var>${actual_count}</var>
 <arg>${iframe} &gt;&gt;&gt; select[data-testid="dropdown-testid-payment_type"] &gt;&gt; option[value]:not([value=""])</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the count of elements found with ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.773991" elapsed="0.006053"/>
+<status status="PASS" start="2025-11-13T02:02:25.910668" elapsed="0.005649"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2025-11-13T00:16:31.780461" level="INFO">Length is 3.</msg>
-<msg time="2025-11-13T00:16:31.780518" level="INFO">${expected_count} = 3</msg>
+<msg time="2025-11-13T02:02:25.916772" level="INFO">Length is 3.</msg>
+<msg time="2025-11-13T02:02:25.916830" level="INFO">${expected_count} = 3</msg>
 <var>${expected_count}</var>
 <arg>${expected_options}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.780185" elapsed="0.000349"/>
+<status status="PASS" start="2025-11-13T02:02:25.916475" elapsed="0.000372"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
 <arg>${actual_count}</arg>
 <arg>${expected_count}</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.780634" elapsed="0.000204"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Payment type options verified: ${expected_options}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.780917" elapsed="0.000262"/>
+<status status="PASS" start="2025-11-13T02:02:25.916944" elapsed="0.000210"/>
 </kw>
 <arg>${expected_payment_types}</arg>
-<status status="PASS" start="2025-11-13T00:16:30.411240" elapsed="1.369992"/>
+<status status="PASS" start="2025-11-13T02:02:25.588141" elapsed="0.329066"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:31.781792" level="INFO">${transaction_data.debit_account} = 612 1 00882 2</msg>
+<msg time="2025-11-13T02:02:25.917833" level="INFO">${transaction_data.debit_account} = 612 1 00882 2</msg>
 <var>${transaction_data.debit_account}</var>
-<arg>612 1 00882 2</arg>
+<arg>${CONFIG}[debit_account]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.781346" elapsed="0.000471"/>
+<status status="PASS" start="2025-11-13T02:02:25.917368" elapsed="0.000491"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-11-13T00:16:31.782234" level="INFO">${current_date} = 13-11-2025</msg>
+<msg time="2025-11-13T02:02:25.918219" level="INFO">${current_date} = 13-11-2025</msg>
 <var>${current_date}</var>
 <arg>result_format=%d-%m-%Y</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.781980" elapsed="0.000276"/>
+<status status="PASS" start="2025-11-13T02:02:25.917989" elapsed="0.000250"/>
 </kw>
 <kw name="Input information for create new file with payment type: 'DDS' with debit account: '${transaction_data.debit_account}' and with date: '${current_date}'" owner="webcon_keywords" source_name="Input information for create new file with payment type: '${payment_type}' with debit account: '${debit_account}' and with date: '${current_date}'">
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:31.789958" level="INFO">Text: 'Fill information'</msg>
+<msg time="2025-11-13T02:02:25.926919" level="INFO">Text: 'Fill information'</msg>
 <arg>${iframe} &gt;&gt;&gt; //div[contains(@class,"Modal_modal--header")]/p</arg>
 <arg>should be</arg>
 <arg>Fill information</arg>
@@ -563,104 +574,104 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.782738" elapsed="0.007306"/>
+<status status="PASS" start="2025-11-13T02:02:25.918796" elapsed="0.008214"/>
 </kw>
 <kw name="Click element when ready" owner="common">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:31.794909" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //label[text()="Debit Account"]/parent::div at state visible</msg>
+<msg time="2025-11-13T02:02:25.932057" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //label[text()="Debit Account"]/parent::div at state visible</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.790589" elapsed="0.004518"/>
+<status status="PASS" start="2025-11-13T02:02:25.927629" elapsed="0.004545"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:31.795757" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //label[text()="Debit Account"]/parent::div'.</msg>
+<msg time="2025-11-13T02:02:25.932785" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //label[text()="Debit Account"]/parent::div'.</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.795256" elapsed="0.030394"/>
+<status status="PASS" start="2025-11-13T02:02:25.932316" elapsed="0.031352"/>
 </kw>
 <arg>//label[text()="Debit Account"]/parent::div</arg>
-<status status="PASS" start="2025-11-13T00:16:31.790208" elapsed="0.035547"/>
+<status status="PASS" start="2025-11-13T02:02:25.927215" elapsed="0.036560"/>
 </kw>
 <kw name="Click element when ready" owner="common">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:31.830849" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@id="portal-top-layer"]//p[text()="612 1 00882 2"] at state visible</msg>
+<msg time="2025-11-13T02:02:25.968836" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@id="portal-top-layer"]//p[text()="612 1 00882 2"] at state visible</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.826311" elapsed="0.004653"/>
+<status status="PASS" start="2025-11-13T02:02:25.964367" elapsed="0.004583"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:31.831577" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@id="portal-top-layer"]//p[text()="612 1 00882 2"]'.</msg>
+<msg time="2025-11-13T02:02:25.969590" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[@id="portal-top-layer"]//p[text()="612 1 00882 2"]'.</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.831106" elapsed="0.027560"/>
+<status status="PASS" start="2025-11-13T02:02:25.969098" elapsed="0.026348"/>
 </kw>
 <arg>//div[@id="portal-top-layer"]//p[text()="${debit_account}"]</arg>
-<status status="PASS" start="2025-11-13T00:16:31.825891" elapsed="0.032879"/>
+<status status="PASS" start="2025-11-13T02:02:25.963912" elapsed="0.031638"/>
 </kw>
 <kw name="Click element when ready" owner="common">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:31.863313" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div at state visible</msg>
+<msg time="2025-11-13T02:02:26.000417" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div at state visible</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.859298" elapsed="0.004123"/>
+<status status="PASS" start="2025-11-13T02:02:25.996073" elapsed="0.004461"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:31.863990" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div'.</msg>
+<msg time="2025-11-13T02:02:26.001167" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div'.</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.863557" elapsed="0.027747"/>
+<status status="PASS" start="2025-11-13T02:02:26.000679" elapsed="0.028307"/>
 </kw>
 <arg>//div[contains(@class,"InputBox_input")]/select[@name="payment_type"]/parent::div</arg>
-<status status="PASS" start="2025-11-13T00:16:31.858910" elapsed="0.032495"/>
+<status status="PASS" start="2025-11-13T02:02:25.995682" elapsed="0.033407"/>
 </kw>
 <kw name="Click element when ready" owner="common">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:31.897451" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //li[@data-testid="dropdown-list-DDS"] at state visible</msg>
+<msg time="2025-11-13T02:02:26.034294" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //li[@data-testid="dropdown-list-DDS"] at state visible</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.891943" elapsed="0.005632"/>
+<status status="PASS" start="2025-11-13T02:02:26.029632" elapsed="0.004788"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:31.898223" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //li[@data-testid="dropdown-list-DDS"]'.</msg>
+<msg time="2025-11-13T02:02:26.035237" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //li[@data-testid="dropdown-list-DDS"]'.</msg>
 <arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.897726" elapsed="0.030368"/>
+<status status="PASS" start="2025-11-13T02:02:26.034646" elapsed="0.029343"/>
 </kw>
 <arg>//li[@data-testid="dropdown-list-${payment_type}"]</arg>
-<status status="PASS" start="2025-11-13T00:16:31.891538" elapsed="0.036658"/>
+<status status="PASS" start="2025-11-13T02:02:26.029223" elapsed="0.034869"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-11-13T00:16:31.928846" level="INFO">Fills the text '13-11-2025' in the given field.</msg>
+<msg time="2025-11-13T02:02:26.064723" level="INFO">Fills the text '13-11-2025' in the given field.</msg>
 <arg>${iframe} &gt;&gt;&gt; //label[text()="Effective Date"]/following-sibling::input</arg>
 <arg>${current_date}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.928314" elapsed="0.007169"/>
+<status status="PASS" start="2025-11-13T02:02:26.064205" elapsed="0.007142"/>
 </kw>
 <kw name="Press Keys" owner="Browser">
 <arg>${iframe} &gt;&gt;&gt; //label[text()="Effective Date"]/following-sibling::input</arg>
@@ -668,262 +679,337 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given key combination into element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.935703" elapsed="0.012476"/>
+<status status="PASS" start="2025-11-13T02:02:26.071520" elapsed="0.009022"/>
 </kw>
 <kw name="Check And Fill Company Address" owner="common">
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:31.953644" level="INFO">Waited for Element with selector //iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"] at state visible</msg>
+<msg time="2025-11-13T02:02:26.085284" level="INFO">Waited for Element with selector //iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"] at state visible</msg>
 <arg>//iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"]</arg>
 <arg>visible</arg>
 <arg>timeout=2s</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.948998" elapsed="0.004759"/>
+<status status="PASS" start="2025-11-13T02:02:26.081380" elapsed="0.003998"/>
 </kw>
-<msg time="2025-11-13T00:16:31.953866" level="INFO">${address_visible} = True</msg>
+<msg time="2025-11-13T02:02:26.085479" level="INFO">${address_visible} = True</msg>
 <var>${address_visible}</var>
 <arg>Wait For Elements State</arg>
 <arg>//iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"]</arg>
 <arg>visible</arg>
 <arg>timeout=2s</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.948782" elapsed="0.005104"/>
+<status status="PASS" start="2025-11-13T02:02:26.081173" elapsed="0.004325"/>
 </kw>
 <if>
 <branch type="IF" condition="${address_visible}">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:31.954464" level="INFO">${company_address} = 111 - NA DUN, NA DUN MAHA SARAKHAM 44180</msg>
+<msg time="2025-11-13T02:02:26.086029" level="INFO">${company_address} = 111 - NA DUN, NA DUN MAHA SARAKHAM 44180</msg>
 <var>${company_address}</var>
 <arg>${CONFIG}[Company Address]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.954253" elapsed="0.000236"/>
+<status status="PASS" start="2025-11-13T02:02:26.085832" elapsed="0.000219"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-11-13T00:16:31.954927" level="INFO">Fills the text '111 - NA DUN, NA DUN MAHA SARAKHAM 44180' in the given field.</msg>
+<msg time="2025-11-13T02:02:26.086527" level="INFO">Fills the text '111 - NA DUN, NA DUN MAHA SARAKHAM 44180' in the given field.</msg>
 <arg>//iframe[@src="/bizone/converter"] &gt;&gt;&gt; //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"]</arg>
 <arg>${company_address}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.954580" elapsed="0.007764"/>
+<status status="PASS" start="2025-11-13T02:02:26.086174" elapsed="0.007366"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Filled Company Address: ${company_address}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.962603" elapsed="0.000538"/>
+<status status="PASS" start="2025-11-13T02:02:26.093709" elapsed="0.000414"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:31.953978" elapsed="0.009225"/>
+<status status="PASS" start="2025-11-13T02:02:26.085586" elapsed="0.008600"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Company Address field not required or not visible</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-11-13T00:16:31.963446" elapsed="0.000079"/>
+<status status="NOT RUN" start="2025-11-13T02:02:26.094439" elapsed="0.000081"/>
 </kw>
-<status status="NOT RUN" start="2025-11-13T00:16:31.963252" elapsed="0.000309"/>
+<status status="NOT RUN" start="2025-11-13T02:02:26.094233" elapsed="0.000321"/>
 </branch>
-<status status="PASS" start="2025-11-13T00:16:31.953950" elapsed="0.009637"/>
+<status status="PASS" start="2025-11-13T02:02:26.085561" elapsed="0.009020"/>
 </if>
-<status status="PASS" start="2025-11-13T00:16:31.948433" elapsed="0.015199"/>
+<status status="PASS" start="2025-11-13T02:02:26.080805" elapsed="0.013822"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Fill information completed successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.963705" elapsed="0.000225"/>
-</kw>
-<status status="PASS" start="2025-11-13T00:16:31.782453" elapsed="0.181548"/>
+<status status="PASS" start="2025-11-13T02:02:25.918441" elapsed="0.176221"/>
 </kw>
 <kw name="Click confirm button" owner="webcon_keywords">
+<kw name="Click element when ready" owner="common">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:31.970982" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm'] at state enabled</msg>
-<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
-<arg>enabled</arg>
+<msg time="2025-11-13T02:02:26.099870" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.964455" elapsed="0.006666"/>
+<status status="PASS" start="2025-11-13T02:02:26.095359" elapsed="0.004628"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:31.971845" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
-<arg>${iframe} &gt;&gt;&gt; //button[normalize-space()='Confirm']</arg>
+<msg time="2025-11-13T02:02:26.100598" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //button[normalize-space()='Confirm']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:31.971290" elapsed="0.102926"/>
+<status status="PASS" start="2025-11-13T02:02:26.100127" elapsed="0.110540"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ Clicked confirm button</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.074446" elapsed="0.000441"/>
+<arg>//button[normalize-space()='Confirm']</arg>
+<status status="PASS" start="2025-11-13T02:02:26.095121" elapsed="0.115771"/>
 </kw>
-<status status="PASS" start="2025-11-13T00:16:31.964164" elapsed="0.110816"/>
+<status status="PASS" start="2025-11-13T02:02:26.094843" elapsed="0.116156"/>
 </kw>
 <kw name="Set To Dictionary" owner="Collections">
 <arg>${file_data.TS001_TC007}</arg>
 <arg>Effective_Date=${current_date}</arg>
 <doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.075157" elapsed="0.000285"/>
+<status status="PASS" start="2025-11-13T02:02:26.213093" elapsed="0.000560"/>
 </kw>
 <kw name="Verify File summary should be display correctly with file details:" owner="webcon_keywords">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-11-13T00:16:32.080117" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='File Summary'] at state visible</msg>
+<msg time="2025-11-13T02:02:26.232037" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[normalize-space()='File Summary'] at state visible</msg>
 <arg>${iframe} &gt;&gt;&gt; //p[normalize-space()='File Summary']</arg>
 <arg>visible</arg>
 <arg>${CONFIG}[timeouts][element_wait]</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.075901" elapsed="0.004325"/>
+<status status="PASS" start="2025-11-13T02:02:26.214643" elapsed="0.017535"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:32.094273" level="INFO">Text: 'Direct Debit'</msg>
-<msg time="2025-11-13T00:16:32.094394" level="INFO">${ui_payment_type} = Direct Debit</msg>
+<msg time="2025-11-13T02:02:26.254186" level="INFO">Text: 'Direct Debit'</msg>
+<msg time="2025-11-13T02:02:26.254311" level="INFO">${ui_payment_type} = Direct Debit</msg>
 <var>${ui_payment_type}</var>
 <arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Payment']/following-sibling::p</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.080392" elapsed="0.014023"/>
+<status status="PASS" start="2025-11-13T02:02:26.232349" elapsed="0.021982"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:32.102737" level="INFO">Text: '13-11-2025'</msg>
-<msg time="2025-11-13T00:16:32.102860" level="INFO">${ui_effective_date} = 13-11-2025</msg>
+<msg time="2025-11-13T02:02:26.267162" level="INFO">Text: '13-11-2025'</msg>
+<msg time="2025-11-13T02:02:26.267275" level="INFO">${ui_effective_date} = 13-11-2025</msg>
 <var>${ui_effective_date}</var>
 <arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Effective Date']/following-sibling::p</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.094563" elapsed="0.008318"/>
+<status status="PASS" start="2025-11-13T02:02:26.254490" elapsed="0.012806"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:32.155390" level="INFO">Text: '27'</msg>
-<msg time="2025-11-13T00:16:32.155510" level="INFO">${ui_transaction_count} = 27</msg>
+<msg time="2025-11-13T02:02:26.274975" level="INFO">Text: '27'</msg>
+<msg time="2025-11-13T02:02:26.275101" level="INFO">${ui_transaction_count} = 27</msg>
 <var>${ui_transaction_count}</var>
 <arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Transaction(s)']/following-sibling::p</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.103044" elapsed="0.052486"/>
+<status status="PASS" start="2025-11-13T02:02:26.267445" elapsed="0.007676"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-11-13T00:16:32.164052" level="INFO">Text: 'THB 2,331,639.00'</msg>
-<msg time="2025-11-13T00:16:32.164164" level="INFO">${ui_total_amount} = THB 2,331,639.00</msg>
+<msg time="2025-11-13T02:02:26.282736" level="INFO">Text: 'THB 2,331,639.00'</msg>
+<msg time="2025-11-13T02:02:26.282848" level="INFO">${ui_total_amount} = THB 2,331,639.00</msg>
 <var>${ui_total_amount}</var>
 <arg>${iframe} &gt;&gt;&gt; //div[contains(@class,'css-v0elue')]//p[normalize-space()='Total amount']/following-sibling::p</arg>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.155679" elapsed="0.008505"/>
+<status status="PASS" start="2025-11-13T02:02:26.275274" elapsed="0.007595"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${ui_payment_type}</arg>
 <arg>${expected_data}[Payment_Type]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.164328" elapsed="0.000295"/>
+<status status="PASS" start="2025-11-13T02:02:26.283019" elapsed="0.000324"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${ui_effective_date}</arg>
 <arg>${expected_data}[Effective_Date]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.164729" elapsed="0.000199"/>
+<status status="PASS" start="2025-11-13T02:02:26.283453" elapsed="0.000197"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${ui_transaction_count}</arg>
 <arg>${expected_data}[Transaction_Count]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.165015" elapsed="0.000179"/>
+<status status="PASS" start="2025-11-13T02:02:26.283731" elapsed="0.000174"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${ui_total_amount}</arg>
 <arg>${expected_data}[Total_Amount]</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.165281" elapsed="0.000171"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>✅ File summary verified successfully</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.165531" elapsed="0.000256"/>
+<status status="PASS" start="2025-11-13T02:02:26.283981" elapsed="0.000154"/>
 </kw>
 <arg>${file_data.TS001_TC007}</arg>
-<status status="PASS" start="2025-11-13T00:16:32.075618" elapsed="0.090247"/>
+<status status="PASS" start="2025-11-13T02:02:26.214091" elapsed="0.070094"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-11-13T00:16:32.166336" level="INFO">${current_date_abbreviated_year} = 131125</msg>
+<msg time="2025-11-13T02:02:26.284724" level="INFO">${current_date_abbreviated_year} = 131125</msg>
 <var>${current_date_abbreviated_year}</var>
 <arg>result_format=%d%m%y</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.166087" elapsed="0.000272"/>
+<status status="PASS" start="2025-11-13T02:02:26.284470" elapsed="0.000278"/>
 </kw>
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2025-11-13T00:16:32.166669" level="INFO">${current_time} = 001632</msg>
+<msg time="2025-11-13T02:02:26.285163" level="INFO">${current_time} = 020226</msg>
 <var>${current_time}</var>
 <arg>result_format=%H%M%S</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.166482" elapsed="0.000206"/>
+<status status="PASS" start="2025-11-13T02:02:26.284884" elapsed="0.000300"/>
 </kw>
 <kw name="Click Generate File Button And Wait For Download Validate Downloaded and should be download successful File name:" owner="webcon_keywords">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:32.167339" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
+<msg time="2025-11-13T02:02:26.285778" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
 <var>${download_dir}</var>
 <arg>${EXECDIR}${/}downloads</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.167167" elapsed="0.000191"/>
+<status status="PASS" start="2025-11-13T02:02:26.285603" elapsed="0.000195"/>
 </kw>
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-11-13T00:16:32.167596" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads&lt;/a&gt;' already exists.</msg>
+<msg time="2025-11-13T02:02:26.286048" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads&lt;/a&gt;' already exists.</msg>
 <arg>${download_dir}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.167432" elapsed="0.000198"/>
+<status status="PASS" start="2025-11-13T02:02:26.285873" elapsed="0.000213"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-11-13T00:16:32.167871" level="INFO">${target_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_001632_27.txt</msg>
+<msg time="2025-11-13T02:02:26.286355" level="INFO">${target_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_020226_27.txt</msg>
 <var>${target_path}</var>
 <arg>${download_dir}${/}${filename}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.167705" elapsed="0.000184"/>
+<status status="PASS" start="2025-11-13T02:02:26.286166" elapsed="0.000208"/>
+</kw>
+<kw name="Promise To Wait For Download" owner="Browser">
+<msg time="2025-11-13T02:02:26.287654" level="INFO">${download_promise} = &lt;Future at 0x1a418cfcec0 state=running&gt;</msg>
+<var>${download_promise}</var>
+<arg>saveAs=${target_path}</arg>
+<tag>BrowserControl</tag>
+<tag>Wait</tag>
+<doc>Returns a promise that waits for next download event on page.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.286458" elapsed="0.001218"/>
+</kw>
+<kw name="Click element when ready" owner="common">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-13T02:02:26.293566" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //footer/button[normalize-space()='Generate file'] at state visible</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.288027" elapsed="0.005656"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-11-13T00:16:32.168319" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //footer/button[normalize-space()='Generate file']'.</msg>
-<arg>${iframe} &gt;&gt;&gt; //footer/button[normalize-space()='Generate file']</arg>
+<msg time="2025-11-13T02:02:26.294305" level="INFO">Clicks the element '//iframe[@src='/bizone/converter'] &gt;&gt;&gt; //footer/button[normalize-space()='Generate file']'.</msg>
+<arg>//iframe[@src='/bizone/converter'] &gt;&gt;&gt; ${locator}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.167965" elapsed="0.047898"/>
+<status status="PASS" start="2025-11-13T02:02:26.293827" elapsed="0.088468"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-13T00:16:42.217019" level="INFO">Slept 10 seconds.</msg>
-<arg>10s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-13T00:16:32.216028" elapsed="10.001181"/>
+<arg>//footer/button[normalize-space()='Generate file']</arg>
+<status status="PASS" start="2025-11-13T02:02:26.287780" elapsed="0.094676"/>
 </kw>
-<kw name="Download" owner="Browser">
-<msg time="2025-11-13T00:16:46.554180" level="INFO">Download done successfully to: C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_001632_27.txt</msg>
-<msg time="2025-11-13T00:16:46.554465" level="INFO">${downloaded} = {'saveAs': 'C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\downloads\\DDS_131125_001632_27.txt', 'suggestedFilename': 'https___ccbuat.tau2904.com_api_accounts_v1_balances_changes...</msg>
-<var>${downloaded}</var>
-<arg>url=https://ccbuat.tau2904.com/api/accounts/v1/balances/changes</arg>
-<arg>saveAs=${target_path}</arg>
-<arg>wait_for_finished=True</arg>
-<arg>download_timeout=30s</arg>
-<tag>Page Content</tag>
-<doc>Download given url content.</doc>
-<status status="PASS" start="2025-11-13T00:16:42.217545" elapsed="4.336957"/>
+<kw name="Wait For" owner="Browser">
+<msg time="2025-11-13T02:02:26.579948" level="INFO">${download_info} = {'saveAs': 'C:\\Users\\Grxxn\\Desktop\\All File Automate\\Automation-assignment\\downloads\\DDS_131125_020226_27.txt', 'suggestedFilename': 'DDS_131125_020226_27.txt', 'state': 'finished', 'downloadID...</msg>
+<var>${download_info}</var>
+<arg>${download_promise}</arg>
+<tag>Wait</tag>
+<doc>Waits for promises to finish and returns results from them.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.382633" elapsed="0.197354"/>
+</kw>
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2025-11-13T02:02:26.580424" level="INFO" html="true">File '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_020226_27.txt"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_020226_27.txt&lt;/a&gt;' exists.</msg>
+<arg>${target_path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.580131" elapsed="0.000343"/>
 </kw>
 <arg>DDS_${current_date_abbreviated_year}_${current_time}_27.txt</arg>
-<status status="PASS" start="2025-11-13T00:16:32.166898" elapsed="14.387714"/>
+<status status="PASS" start="2025-11-13T02:02:26.285338" elapsed="0.295202"/>
+</kw>
+<kw name="Verify generate file toast message should be display correctly with '27' records" owner="webcon_keywords">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-11-13T02:02:26.598216" level="INFO">Waited for Element with selector //iframe[@src='/bizone/converter'] &gt;&gt;&gt; //p[contains(text(), 'File generated successfully 27 records.')] at state visible</msg>
+<arg>${iframe} &gt;&gt;&gt; //p[contains(text(), 'File generated successfully 27 records.')]</arg>
+<arg>visible</arg>
+<arg>${CONFIG}[timeouts][element_wait]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.581089" elapsed="0.017266"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-11-13T02:02:26.609233" level="INFO">Text: 'File generated successfully 27 records. Please check the file in your computer'</msg>
+<msg time="2025-11-13T02:02:26.609368" level="INFO">${tost} = File generated successfully 27 records. Please check the file in your computer</msg>
+<var>${tost}</var>
+<arg>${iframe} &gt;&gt;&gt; //p[contains(text(), 'File generated successfully 27 records.')]</arg>
+<arg>should be</arg>
+<arg>${CONFIG}[Expected_messages][Generate_file_success]</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.598514" elapsed="0.010878"/>
+</kw>
+<status status="PASS" start="2025-11-13T02:02:26.580786" elapsed="0.028714"/>
+</kw>
+<kw name="Verify file should be exist and file name:" owner="webcon_keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-13T02:02:26.610423" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
+<var>${download_dir}</var>
+<arg>${EXECDIR}${/}downloads</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.610196" elapsed="0.000253"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-13T02:02:26.610732" level="INFO">${target_path} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_020226_27.txt</msg>
+<var>${target_path}</var>
+<arg>${download_dir}${/}${filename}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.610539" elapsed="0.000216"/>
+</kw>
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2025-11-13T02:02:26.611028" level="INFO" html="true">File '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_020226_27.txt"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads\DDS_131125_020226_27.txt&lt;/a&gt;' exists.</msg>
+<arg>${target_path}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.610832" elapsed="0.000234"/>
+</kw>
+<arg>DDS_${current_date_abbreviated_year}_${current_time}_27.txt</arg>
+<status status="PASS" start="2025-11-13T02:02:26.609781" elapsed="0.001331"/>
+</kw>
+<kw name="Delete Downloaded Files" owner="webcon_keywords" type="TEARDOWN">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-13T02:02:26.611849" level="INFO">${download_dir} = C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads</msg>
+<var>${download_dir}</var>
+<arg>${EXECDIR}${/}downloads</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.611665" elapsed="0.000206"/>
+</kw>
+<kw name="Remove Directory" owner="OperatingSystem">
+<msg time="2025-11-13T02:02:26.612482" level="INFO" html="true">Removed directory '&lt;a href="file://C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads"&gt;C:\Users\Grxxn\Desktop\All File Automate\Automation-assignment\downloads&lt;/a&gt;'.</msg>
+<arg>${download_dir}</arg>
+<arg>recursive=${True}</arg>
+<doc>Removes the directory pointed to by the given ``path``.</doc>
+<status status="PASS" start="2025-11-13T02:02:26.611947" elapsed="0.000590"/>
+</kw>
+<status status="PASS" start="2025-11-13T02:02:26.611342" elapsed="0.001256"/>
 </kw>
 <doc>Create new file : Upload file TBank format - CMS001</doc>
 <tag>happy_case</tag>
 <tag>lab1_happy_case</tag>
-<status status="PASS" start="2025-11-13T00:16:27.984086" elapsed="18.570817"/>
+<status status="PASS" start="2025-11-13T02:02:22.604037" elapsed="4.008664"/>
 </test>
-<status status="PASS" start="2025-11-13T00:16:18.270447" elapsed="28.288657"/>
+<status status="PASS" start="2025-11-13T02:02:16.677337" elapsed="9.941157"/>
 </suite>
 <statistics>
 <total>

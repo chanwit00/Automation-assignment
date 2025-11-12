@@ -15,9 +15,7 @@ Tax ID: 7740207838471
 
 Company Address: 111 - NA DUN, NA DUN MAHA SARAKHAM 44180
 
-
-
-
+debit_account: 612 1 00882 2
 
 Expected_messages:
   Upload_file_to_edit_transaction_detail: Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format
