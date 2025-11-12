@@ -29,7 +29,6 @@ TS001_TC007: Create new file : Upload file TBank format - CMS001
     Verify File summary should be display correctly with file details:  ${file_data.TS001_TC007}
     ${current_date_abbreviated_year}=    Get Current Date    result_format=%d%m%y
     ${current_time}=     Get Current Date    result_format=%H%M%S
-    # Click button with locator: '//footer/button[text()="Generate file"]' with: filename: DDS_${current_date_abbreviated_year}_${current_time}_27.txt should be download successful
     Click Generate File Button And Wait For Download Validate Downloaded and should be download successful File name:   DDS_${current_date_abbreviated_year}_${current_time}_27.txt
     Verify generate file toast message should be display correctly with '27' records   
     Verify file should be exist and file name:  DDS_${current_date_abbreviated_year}_${current_time}_27.txt

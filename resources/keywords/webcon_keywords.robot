@@ -6,13 +6,9 @@ Resource    ../../resources/keywords/common.robot
 
 Open Application and Login To CCB
     Load Config
-    ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
-    Create Directory    ${download_dir}
 
     New Browser    ${CONFIG}[browser]    headless=${CONFIG}[headless]
-    ${context_args}=    Create Dictionary    acceptDownloads=${True}
-    New Context    &{context_args}
-
+    
     ${PAGE}=    New Page    ${CONFIG}[url]
     Set Suite Variable    ${PAGE}
     Wait For Elements State    //input[@type='text']    visible    ${CONFIG}[timeouts][element_wait]
@@ -122,15 +118,16 @@ Click Generate File Button And Wait For Download Validate Downloaded and should 
     [Arguments]    ${filename}
     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
     Create Directory    ${download_dir}
+
     ${target_path}=    Set Variable    ${download_dir}${/}${filename}
-    ${download_promise}=    Promise To Wait For Download    saveAs=${target_path}
+    ${download_file}=    Promise To Wait For Download    saveAs=${target_path}
     Click element when ready    //footer/button[normalize-space()='Generate file']
-    ${download_info}=    Wait For    ${download_promise}      
+    ${download_waiting}=    Wait For    ${download_file}      
     File Should Exist    ${target_path}
        
     
 Verify generate file toast message should be display correctly with '27' records
-    Wait For Elements State    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    visible    ${CONFIG}[timeouts][element_wait]
+    Wait For Elements State    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    visible    timeout=5s
     ${tost}=    Get Text    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    should be    ${CONFIG}[Expected_messages][Generate_file_success]
 
 

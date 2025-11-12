@@ -38,7 +38,6 @@ Check And Fill Company Address
     IF    ${address_visible}
         ${company_address}=    Set Variable    ${CONFIG}[Company Address]
         Fill Text    //iframe[@src="/bizone/converter"] >>> //label[normalize-space()="Company Address"]/parent::div//textarea[@name="company_address"]    ${company_address}
-        Log To Console    Filled Company Address: ${company_address}
     ELSE
         Log To Console    Company Address field not required or not visible
     END
