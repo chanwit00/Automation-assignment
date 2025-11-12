@@ -15,6 +15,10 @@ Tax ID: 7740207838471
 
 Company Address: 111 - NA DUN, NA DUN MAHA SARAKHAM 44180
 
+
+
+
+
 Expected_messages:
   Upload_file_to_edit_transaction_detail: Support only ttb format (SAPFORMAT/ SAPFORMAT NEW) and Thanachart format
   Upload_payment_file_detail: You can edit detail in existing file by uploading that file and proceed to create a new one. Click on the button "Browse new" to select a file or drag and drop file at "Drop file to upload" area. The system supports uploading ttb format (SAPFORMAT and SAPFORMAT NEW) and TBank format (CMS001, CMS002, CMS005, CMS030, MCS001 and MCS003)

@@ -8,7 +8,14 @@ Library    DateTime
 *** Variables ***
 ${CONFIG}    ${None}
 ${PAGE}      ${None}
+${iframe}    //iframe[@src='/bizone/converter']
 
+
+&{file_data.TS001_TC007}
+...    Payment_Type=Direct Debit
+...    Effective_Date=
+...    Transaction_Count=27
+...    Total_Amount=2,331,639.00
 
 
 *** Keywords ***

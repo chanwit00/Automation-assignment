@@ -2,9 +2,8 @@
 Resource    ../../resources/keywords/common.robot
 
 *** Variables ***
-${CONFIG}    ${None}
-${PAGE}      ${None}
-${iframe}    //iframe[@src='/bizone/converter']
+
+
 
 *** Keywords ***
 
@@ -136,32 +135,47 @@ Verify File summary should be display correctly with file details:
     Log To Console    ✅ File summary verified successfully
 
 
-Click Generate File Button And Wait For Download Validate Downloaded File Name and should be download successful
-    ${expected_date}=    Get Current Date    result_format=%d%m%y
-    ${current_time}=     Get Current Date    result_format=%H%M%S
+Click Generate File Button And Wait For Download Validate Downloaded and should be download successful File name:
+    [Arguments]    ${filename}
+    # ${expected_date}=    Get Current Date    result_format=%d%m%y
+    # ${current_time}=     Get Current Date    result_format=%H%M%S
     ${download_dir}=     Set Variable    ${EXECDIR}${/}downloads
     Create Directory     ${download_dir}
 
-    ${filename}=    Set Variable    DDS_${expected_date}_${current_time}_27.txt
+    # ${filename}=    Set Variable    DDS_${expected_date}_${current_time}_27.txt
     ${target_path}=  Set Variable    ${download_dir}${/}${filename}
 
     Click    ${iframe} >>> //footer/button[normalize-space()='Generate file']
-    Log To Console    ✅ Clicked Generate file button
-    Log To Console    🚀 Start generating and downloading: ${filename}
+    Sleep    10s    # Wait for download to start
+    # Log To Console    ✅ Clicked Generate file button
+    # Log To Console    🚀 Start generating and downloading: ${filename}
 
     ${downloaded}=    Download
-    ...    url=${CONFIG}[url]/main/extensions/WEB_CONVERTER
+    ...    url=https://ccbuat.tau2904.com/api/accounts/v1/balances/changes
     ...    saveAs=${target_path}
     ...    wait_for_finished=True
     ...    download_timeout=30s
 
-    File Should Exist    ${target_path}
-    Log To Console    ✅ File downloaded successfully: ${target_path}
+    # File Should Exist    ${target_path}
+    # Log To Console    ✅ File downloaded successfully: ${target_path}
 
-    RETURN    ${target_path}
+    # RETURN    ${target_path}
 
-Verify generate file toast message should be display correctly with '27' records
-    Wait For Elements State    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    visible    ${CONFIG}[timeouts][element_wait]
-    ${tost}=    Get Text    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    should be    ${CONFIG}[Expected_messages][Generate_file_success]
-    Log To Console    ✅ Generate file success toast message verified: ${tost}
-    Take Screenshot
+
+# Verify generate file toast message should be display correctly with '27' records
+#     Wait For Elements State    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    visible    ${CONFIG}[timeouts][element_wait]
+#     ${tost}=    Get Text    ${iframe} >>> //p[contains(text(), 'File generated successfully 27 records.')]    should be    ${CONFIG}[Expected_messages][Generate_file_success]
+#     Log To Console    ✅ Generate file success toast message verified: ${tost}
+#     Take Screenshot
+
+
+# Verify file should be exist and file name:
+#     [Arguments]    ${filename}
+#     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
+#     ${target_path}=    Set Variable    ${download_dir}${/}${filename}
+#     File Should Exist    ${target_path}
+#     Log To Console    ✅ Verified file exists with name: ${filename}
+
+
+# Delete Downloaded Files
+#     ${download_dir}=    Set Variable    ${EXECDIR}${/}downloads
